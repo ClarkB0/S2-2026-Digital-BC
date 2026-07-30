@@ -1,6 +1,8 @@
 # The raw passphrase to clean:
 raw_phrase = "aP!pL3e#S4aU%cE"
 
+
+
 # YOUR GOAL: Clean up this phrase using the 3 Security Rules below!
 def loop_solution(raw_phrase):
     allowed_characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -13,3 +15,4 @@ def loop_solution(raw_phrase):
     print(clean_phrase)
 
 print(''.join(filter(str.isalpha, raw_phrase)).upper())
+
