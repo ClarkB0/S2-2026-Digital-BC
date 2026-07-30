@@ -6,4 +6,3 @@ Remove Numbers: Strip out any digits (0-9).
 
 Make It All Uppercase: Convert the remaining letters to ALL UPPERCASE.
 
-
