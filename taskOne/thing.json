@@ -1,0 +1,71 @@
+[
+  {
+    "id": "53614",
+    "description": "Pedare Aquaponics",
+    "type": "3",
+    "time_diff": "0",
+    "status": {
+      "disconnected": "0",
+      "slide_serial": "R76TW813RX5",
+      "slide_expires": "1786839580",
+      "out_of_water": "0",
+      "wrong_slide": "0",
+      "last_experiment": "1785388382"
+    },
+    "exps": {
+      "temperature": {
+        "trend": "0",
+        "critical_in": "-1",
+        "avg": "20.323",
+        "status": "0",
+        "curr": "20.250",
+        "advises": []
+      },
+      "ph": {
+        "trend": "0",
+        "critical_in": "-1",
+        "avg": "8.15",
+        "status": "1",
+        "curr": "8.16",
+        "advises": []
+      },
+      "nh3": {
+        "trend": "0",
+        "critical_in": "-1",
+        "avg": "0.024",
+        "status": "0",
+        "curr": "0.024",
+        "advises": []
+      },
+      "nh4": {
+        "trend": "-1",
+        "critical_in": "-1",
+        "avg": "18.58",
+        "status": "0",
+        "curr": "18.48",
+        "advises": []
+      },
+      "o2": {
+        "trend": "0",
+        "critical_in": "-1",
+        "avg": "9.0",
+        "status": "0",
+        "curr": "9.0",
+        "advises": []
+      },
+      "lux": {
+        "status": null,
+        "curr": "0",
+        "advises": []
+      },
+      "par": {
+        "curr": "0",
+        "advises": []
+      },
+      "kelvin": {
+        "curr": "0",
+        "advises": []
+      }
+    }
+  }
+]

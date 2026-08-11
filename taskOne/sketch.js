@@ -11,6 +11,8 @@ const USE_OFFLINE_MOCK = false;
 let aquariumData = null;
 let lastUpdated = "";
 
+console.log('hello world')
+
 function preload() {
   // Load initial data before setup() runs
   let endpoint = USE_OFFLINE_MOCK ? "sample-data.json" : PROXY_URL;
@@ -56,7 +58,7 @@ function draw() {
   if (aquariumData) {
     // NOTE: Update these keys based on your actual Seneye JSON response structure!
     // Example fields commonly found in sensor data:
-    let temp = aquariumData.temperature || 24.5;
+    let temp = aquariumData.temperature || -272;
     let ph = aquariumData.ph || 7.2;
     let nh3 = aquariumData.nh3 || 0.01;
 
