@@ -20,7 +20,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800, 500);
+  createCanvas(displayWidth / pixelDensity(), displayHeight / pixelDensity());
   
   // Refresh live data every 5 minutes (300,000 ms)
   if (!USE_OFFLINE_MOCK) {
@@ -58,9 +58,9 @@ function draw() {
   if (aquariumData) {
     // NOTE: Update these keys based on your actual Seneye JSON response structure!
     // Example fields commonly found in sensor data:
-    let temp = aquariumData.temperature || -272;
-    let ph = aquariumData.ph || 7.2;
-    let nh3 = aquariumData.nh3 || 0.01;
+    let temp = aquariumData[0].exps.temperature.curr || 999;
+    let ph = aquariumData[0].exps.ph.curr || 999;
+    let nh3 = aquariumData[0].exps.nh3.curr || 999;
 
     // Call your custom graphic widgets
     drawTempWidget(50, 120, temp);
