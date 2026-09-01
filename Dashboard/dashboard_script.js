@@ -10,19 +10,20 @@ const USE_OFFLINE_MOCK = false;
 
 let aquariumData = null;
 let lastUpdated = "";
-let thegif;
 
 console.log('hello world')
 
 function preload() {
   // Load initial data before setup() runs
-  let endpoint = USE_OFFLINE_MOCK ? "sample-data.json" : PROXY_URL;
+  let endpoint = USE_OFFLINE_MOCK ? "example.json" : PROXY_URL;
   aquariumData = loadJSON(endpoint, onDataLoaded, onError);
-  thegif = loadImage("why.gif");
+  thevideo = createVideo(["Science Rate of Reaction D&D Video.mp4"]);
+  thevideo.hide();
+  thevideo.loop();
 }
 
 function setup() {
-  createCanvas(displayWidth / pixelDensity(), displayHeight / pixelDensity());
+  createCanvas(windowWidth - 50, windowHeight - 50);
   
   // Refresh live data every 5 minutes (300,000 ms)
   if (!USE_OFFLINE_MOCK) {
@@ -44,8 +45,6 @@ function onError(err) {
 
 function draw() {
   background(20, 30, 45); // Dark blue aquarium background
-
-  image(thegif, 50, 50);
 
   // 1. Draw Title Header
   fill(255);
