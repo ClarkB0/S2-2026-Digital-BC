@@ -17,9 +17,6 @@ function preload() {
   // Load initial data before setup() runs
   let endpoint = USE_OFFLINE_MOCK ? "example.json" : PROXY_URL;
   aquariumData = loadJSON(endpoint, onDataLoaded, onError);
-  thevideo = createVideo(["Science Rate of Reaction D&D Video.mp4"]);
-  thevideo.hide();
-  thevideo.loop();
 }
 
 function setup() {
