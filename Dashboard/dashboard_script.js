@@ -65,8 +65,13 @@ function drawMeter(position, ranges, interval, value) {
     stroke(0);
     strokeWeight(4);
     rect(position[0], position[1], 50, 200);
+    
+    let range = ranges[1] - ranges[0];
 
-    noStroke()
-
+    fill(0);
+    noStroke();
+    textAlign(RIGHT, CENTER);
+    textSize(10);
+    text("0", position[0] - 4, position[1] + 200);
 
 }
