@@ -11,7 +11,7 @@ const USE_OFFLINE_MOCK = false;
 let aquariumData = null;
 let lastUpdated = "";
 
-console.log('hello world')
+console.log('hello world');
 
 function preload() {
   // Load initial data before setup() runs
@@ -20,7 +20,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth - 50, windowHeight - 50);
+  createCanvas(windowWidth, windowHeight);
   
   // Refresh live data every 5 minutes (300,000 ms)
   if (!USE_OFFLINE_MOCK) {
