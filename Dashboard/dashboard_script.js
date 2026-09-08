@@ -3,8 +3,6 @@ const API_ENDPOINT = "https://seneye-proxy.ezankov.workers.dev/";
 let aquariumData = null;
 let lastUpdated = "";
 
-console.log('testing');
-
 
 function loadData() {
     data = loadJSON(API_ENDPOINT, onDataLoaded, onError);
@@ -51,10 +49,24 @@ function draw() {
         textSize(24);
         textAlign(LEFT, TOP);
         text(stats.join("\n"), 0, 0);
+
+        drawMeter([50, 50], 0, 0, 0)
     } else {
         fill(0);
         textSize(24);
         textAlign(LEFT, TOP);
         text("Connecting to sensor stream...", 30, 120);
     }
+}
+
+
+function drawMeter(position, ranges, interval, value) {
+    fill(255);
+    stroke(0);
+    strokeWeight(4);
+    rect(position[0], position[1], 50, 200);
+
+    noStroke()
+
+
 }
