@@ -80,9 +80,9 @@ function draw() {
         warningBlink = !warningBlink;
     }
 
-    drawCard([width / 2, 150], "Temperature", temperature, "°C", [temperatureRanges[0][0], temperatureRanges[4][1]], 2.5, temperatureRanges, warningBlink);
-    drawCard([width / 5, 150], "pH Level", ph, "", [phRanges[0][0], phRanges[4][1]], 0.5, phRanges, warningBlink);
-    drawCard([4 * width / 5, 150], "Ammonia Level", ammonia, "mg/L", [ammoniaRanges[0][0], ammoniaRanges[4][1]], 0.01, ammoniaRanges, warningBlink);
+    drawCard([width / 5, 150], "Temperature", temperature, "°C", [temperatureRanges[0][0], temperatureRanges[4][1]], 2.5, temperatureRanges, warningBlink);
+    drawCard([width / 2, 150], "pH level", ph, "", [phRanges[0][0], phRanges[4][1]], 0.5, phRanges, warningBlink);
+    drawCard([4 * width / 5, 150], "Ammonia level", ammonia, "mg/L", [ammoniaRanges[0][0], ammoniaRanges[4][1]], 0.01, ammoniaRanges, warningBlink);
 
     if (fishX < 150 || fishX > width - 150) {
         fishDirection = -fishDirection;
