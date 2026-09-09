@@ -3,6 +3,10 @@ const API_ENDPOINT = "https://seneye-proxy.ezankov.workers.dev/";
 let aquariumData = null;
 let lastUpdated = "";
 
+// format these as the correct arrays later
+const temperatureRanges = [15, 20, 22, 26, 28, 35]
+const phRanges = [6, 6.5, 6.8, 7.8, 8.2, 9]
+
 
 function loadData() {
     data = loadJSON(API_ENDPOINT, onDataLoaded, onError);
@@ -34,32 +38,21 @@ function setup() {
 
 
 function draw() {
-    if (aquariumData) {
-        let temp = aquariumData[0].exps.temperature.curr || 999;
-        let ph = aquariumData[0].exps.ph.curr || 999;
-        let nh3 = aquariumData[0].exps.nh3.curr || 999;
+    background("lightblue");
 
-        let stats = [
-            "Temperature: " + temp,
-            "PH: " + ph,
-            "NH3: " + nh3,
-            "Last updated: " + lastUpdated
-        ]
+    fill("black");
+    textSize(36);
+    textAlign(CENTER, TOP);
+    text("Pedare Aquaponics Dashboard", windowWidth / 2, 30)
 
-        fill(0);
-        textSize(24);
-        textAlign(LEFT, TOP);
-        text(stats.join("\n"), 0, 0);
+    fill("gray");
+    textSize(16);
+    textAlign(RIGHT, TOP);
+    text("Last updated: " + (lastUpdated || "Loading..."), windowWidth - 15, 15);
 
-        const ranges = [[0, 20], [20, 40], [40, 60], [60, 80], [80, 100]]
+    const ranges = [[0, 20], [20, 40], [40, 60], [60, 80], [80, 100]]
 
-        drawMeter([100, 150], [0, 100], 10, 43, ranges)
-    } else {
-        fill(0);
-        textSize(24);
-        textAlign(LEFT, TOP);
-        text("Connecting to sensor stream...", 30, 120);
-    }
+    drawMeter([100, 150], [0, 100], 10, 43, ranges)
 }
 
 
@@ -94,6 +87,6 @@ function drawMeter(position, extrema, interval, value, ranges=null) {
     }
     stroke("red");
     strokeWeight(2);
-    line(position[0], valueY, position[0] + 50, valueY);
+    line(position[0] + 2, valueY, position[0] + 48, valueY);
     noStroke()
 }
