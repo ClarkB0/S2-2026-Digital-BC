@@ -9,7 +9,9 @@ const phRanges = [[6, 6.5], [6.5, 6.8], [6.8, 7.8], [7.8, 8.2], [8.2, 9]];
 const ammoniaRanges = [[0, 0], [0, 0], [0, 0.02], [0.02, 0.05], [0.05, 0.08]]
 
 let warningBlink = false;
-
+let fishImage;
+let fishX = 200;
+let fishDirection = 1;
 
 function loadData() {
     data = loadJSON(API_ENDPOINT, onDataLoaded, onError);
@@ -33,12 +35,14 @@ function onError(err) {
 
 function preload() {
     aquariumData = loadData()
+    fishImage = loadImage('silver_perch.png');
 }
 
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     setInterval(loadData, 300000);
+    imageMode(CENTER);
 }
 
 
@@ -48,24 +52,24 @@ function draw() {
     fill("black");
     textSize(36);
     textAlign(CENTER, TOP);
-    text("Pedare Aquaponics Dashboard", windowWidth / 2, 30)
+    text("Pedare Aquaponics Dashboard", width / 2, 30)
 
     fill("gray");
     textSize(16);
     textAlign(RIGHT, TOP);
-    text("Last updated: " + lastUpdated.toLocaleTimeString(), windowWidth - 15, 15);
+    text("Last updated: " + lastUpdated.toLocaleTimeString(), width - 15, 15);
 
     const timeSinceUpdate = new Date() - lastUpdated;
     const minutesSinceUpdate = Math.floor(timeSinceUpdate / 60000);
 
-    text(minutesSinceUpdate + " minutes ago", windowWidth - 15, 40);
+    text(minutesSinceUpdate + " minutes ago", width - 15, 40);
 
     if (connectionStatus === "OK") {
-        text("Connection status: " + connectionStatus, windowWidth - 15, 65);
+        text("Connection status: " + connectionStatus, width - 15, 65);
     } else {
         fill("red");
-        text("Connection status: " + connectionStatus, windowWidth - 15, 65);
-        text("Check network and URL", windowWidth - 15, 90);
+        text("Connection status: " + connectionStatus, width - 15, 65);
+        text("Check network and URL", width - 15, 90);
     }
 
     const temperature = aquariumData[0].exps.temperature.curr;
@@ -76,16 +80,33 @@ function draw() {
         warningBlink = !warningBlink;
     }
 
-    drawCard([windowWidth / 2, 150], "Temperature", temperature, "°C", [temperatureRanges[0][0], temperatureRanges[4][1]], 2.5, temperatureRanges, warningBlink)
-    drawCard([windowWidth / 5, 150], "pH Level", ph, "", [phRanges[0][0], phRanges[4][1]], 0.5, phRanges, warningBlink)
-    drawCard([4 * windowWidth / 5, 150], "Ammonia Level", ammonia, "mg/L", [ammoniaRanges[0][0], ammoniaRanges[4][1]], 0.01, ammoniaRanges, warningBlink)
+    drawCard([width / 2, 150], "Temperature", temperature, "°C", [temperatureRanges[0][0], temperatureRanges[4][1]], 2.5, temperatureRanges, warningBlink);
+    drawCard([width / 5, 150], "pH Level", ph, "", [phRanges[0][0], phRanges[4][1]], 0.5, phRanges, warningBlink);
+    drawCard([4 * width / 5, 150], "Ammonia Level", ammonia, "mg/L", [ammoniaRanges[0][0], ammoniaRanges[4][1]], 0.01, ammoniaRanges, warningBlink);
+
+    if (fishX < 150 || fishX > width - 150) {
+        fishDirection = -fishDirection;
+    }
+    fishX -= 5 * fishDirection;
+    // Push and pop 'escape' the current coordinate system
+    // This allows transformations on this local 'fish' coordinate system to be made
+    push();
+    // The origin is translated to the desired fish position
+    translate(fishX, 700);
+    // The x scale of the coordinate system is inverted depending on fish direction
+    scale(fishDirection, 1);
+    // The fish is drawn at (0, 0), where the coordinate grid has been reflected
+    image(fishImage, 0, 0, 300, 150);
+    pop();
 }
 
 
 function drawMeter(position, extrema, interval, value, ranges) {
+    const clamp = (val, extrema) => Math.min(Math.max(val, extrema[0]), extrema[1]);
+
     const range = extrema[1] - extrema[0];
     const spacing = 200 / range;
-    const valueY = position[1] + 200 - value * spacing + extrema[0] * spacing;
+    const valueY = position[1] + 200 - clamp(value, extrema) * spacing + extrema[0] * spacing;
 
     const colours = ["orange", "yellow", "chartreuse", "yellow", "orange"]
     for (let i = 0; i < 5; i++) {
