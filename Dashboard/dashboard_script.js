@@ -6,7 +6,7 @@ let connectionStatus = "";
 
 const temperatureRanges = [[15, 20], [20, 22], [22, 26], [26, 28], [28, 35]];
 const phRanges = [[6, 6.5], [6.5, 6.8], [6.8, 7.8], [7.8, 8.2], [8.2, 9]];
-const ammoniaRanges = [[0, 0], [0, 0], [0, 0.02], [0.02, 0.05], [0.05, 0.08]]
+const ammoniaRanges = [[0, 0], [0, 0], [0, 0.02], [0.02, 0.05], [0.05, 0.08]];
 
 let warningBlink = false;
 let fishImage;
@@ -15,7 +15,7 @@ let fishDirection = 1;
 
 function loadData() {
     data = loadJSON(API_ENDPOINT, onDataLoaded, onError);
-    return data;
+    return data
 }
 
 
@@ -154,9 +154,9 @@ function drawCard(position, measurement, value, unit, extrema, interval, ranges,
     text(measurement + " is " + measurementStatus[0], position[0], position[1] + 275);
 
     if (measurementStatus[0] === "suboptimal") {
-        text(measurement + " is " + measurementStatus[1], position[0], position[1] + 300)
+        text(measurement + " is " + measurementStatus[1], position[0], position[1] + 300);
     } else if (measurementStatus[0] === "bad" && !blink) {
-        text("Warning: " + measurement + " is too " + measurementStatus[1], position[0], position[1] + 300)
+        text("Warning: " + measurement + " is too " + measurementStatus[1], position[0], position[1] + 300);
     }
 }
 
