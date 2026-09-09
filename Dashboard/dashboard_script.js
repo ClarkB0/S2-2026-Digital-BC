@@ -42,7 +42,8 @@ function draw() {
         let stats = [
             "Temperature: " + temp,
             "PH: " + ph,
-            "NH3: " + nh3
+            "NH3: " + nh3,
+            "Last updated: " + lastUpdated
         ]
 
         fill(0);
@@ -50,7 +51,9 @@ function draw() {
         textAlign(LEFT, TOP);
         text(stats.join("\n"), 0, 0);
 
-        drawMeter([50, 50], 0, 0, 0)
+        const ranges = [[0, 20], [20, 40], [40, 60], [60, 80], [80, 100]]
+
+        drawMeter([100, 150], [0, 100], 10, 43, ranges)
     } else {
         fill(0);
         textSize(24);
@@ -60,18 +63,37 @@ function draw() {
 }
 
 
-function drawMeter(position, ranges, interval, value) {
-    fill(255);
-    stroke(0);
-    strokeWeight(4);
+function drawMeter(position, extrema, interval, value, ranges=null) {
+    const range = extrema[1] - extrema[0];
+    const spacing = 200 / range;
+    const valueY = position[1] + 200 - value * spacing;
+
+    if (ranges) {
+        const colours = ["orange", "yellow", "chartreuse", "yellow", "orange"]
+        for (let i = 0; i < 5; i++) {
+            const rangeY = position[1] + 200 - ranges[i][1] * spacing;
+            const rangeHeight = (ranges[i][1] - ranges[i][0]) * spacing;
+            fill(colours[i]);
+            rect(position[0], rangeY, 50, rangeHeight);
+        }
+    }
+
+    noFill();
+    stroke("black");
+    strokeWeight(2);
     rect(position[0], position[1], 50, 200);
-    
-    let range = ranges[1] - ranges[0];
 
-    fill(0);
+    let label = extrema[0];
     noStroke();
-    textAlign(RIGHT, CENTER);
-    textSize(10);
-    text("0", position[0] - 4, position[1] + 200);
-
+    while (label <= extrema[1]) {
+        fill(0);
+        textAlign(RIGHT, CENTER);
+        textSize(10);
+        text(label, position[0] - 4, position[1] + 200 - label * spacing);
+        label += interval;
+    }
+    stroke("red");
+    strokeWeight(2);
+    line(position[0], valueY, position[0] + 50, valueY);
+    noStroke()
 }
