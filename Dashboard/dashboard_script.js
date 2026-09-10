@@ -92,7 +92,7 @@ function draw() {
     // This allows transformations on this local 'fish' coordinate system to be made
     push();
     // The origin is translated to the desired fish position
-    translate(fishX, 700);
+    translate(fishX, 4 * height / 5);
     // The x scale of the coordinate system is inverted depending on fish direction
     scale(fishDirection, 1);
     // The fish is drawn at (0, 0), where the coordinate grid has been reflected
