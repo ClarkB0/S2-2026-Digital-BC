@@ -124,7 +124,7 @@ function drawMeter(position, extrema, interval, value, ranges) {
     let label = extrema[0];
     noStroke();
     while (label < extrema[1] + interval) {
-        fill(0);
+        fill("black");
         textAlign(RIGHT, CENTER);
         textSize(10);
         text(+label.toPrecision(4), position[0] - 4, position[1] + 200 - label * spacing + extrema[0] * spacing);
