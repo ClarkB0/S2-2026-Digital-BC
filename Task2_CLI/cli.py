@@ -5,12 +5,12 @@ def get_data(code):
     try:
         data = requests.get(f'https://world.openfoodfacts.net/api/v2/product/{code}').json()
         if data['status'] == 1:
-            print(f'Successfully retrieved data for product: {data.get('product', {}).get('product_name')}')
+            print(f'Successfully retrieved data for product: {data.get('product', {}).get('product_name')}\n')
         else:
-            print(f'Error getting data: {data.get('status_verbose', {})}')
+            print(f'Error getting data: {data.get('status_verbose', {})}\n')
         return data
     except:
-        print('Error getting data: check network or URL')
+        print('Error getting data: check network or URL\n')
         return {}
 
 class FoodREPL(cmd.Cmd):
@@ -31,12 +31,17 @@ class FoodREPL(cmd.Cmd):
                             'Sodium': {'value': 'sodium_100g', 'unit': 'sodium_unit'},
                             'Carbs': {'value': 'carbohydrates_100g', 'unit': 'carbohydrates_unit'},
                             'Sugars': {'value': 'sugars_100g', 'unit': 'sugars_unit'},
-                            'Proteins': {'value': 'proteins_100g', 'unit': 'proteins_unit'}}
+                            'Proteins': {'value': 'proteins_100g', 'unit': 'proteins_unit'}} # Does not work for prepared foods (e.g. Milo)
+        self.nutri_score_desc = {'a': 'Excellent choice: Very high nutritional quality for this type of food.\nIdeal for daily consumption.',
+                                 'b': 'Good choice: Good overall nutritional quality for this type of food.\nHealthy option that can be eaten regularly.',
+                                 'c': 'Moderate choice: Balanced nutritional quality for this type of food.\nConsume in moderation as part of a varied diet.',
+                                 'd': 'Limited choice: Low nutritional quality for this type of food.\nConsume less frequently and in smaller portions.',
+                                 'e': 'Occasional choice: Very low nutritional quality for this type of food.\nReserve as an occasional treat.'}
 
 
     def do_exit(self, arg):
         'Exit the application:  EXIT'
-        print('Exiting the application.')
+        print('Exiting the application.\n')
         return True
     do_x = do_exit
 
@@ -47,7 +52,7 @@ class FoodREPL(cmd.Cmd):
             print(self.code)
         else:
             self.code = args[0]
-            print(f'code set to {self.code}')
+            print(f'Current code set to {self.code}\n')
 
     def do_getdata(self, arg):
         'Get and set data for given code:  GETDATA code:int\nLeave blank to get data for current code.'
@@ -59,8 +64,12 @@ class FoodREPL(cmd.Cmd):
 
     def do_dumpdata(self, arg):
         'Dump current data to output.json:  DUMPDATA'
-        with open('output.json', 'w') as file:
-            json.dump(self.data, file, indent=4)
+        try:
+            with open('output.json', 'w') as file:
+                json.dump(self.data, file, indent=4)
+            print('Data output successfully.\n')
+        except:
+            print('Error writing to file.\n')
 
     def do_name(self, arg):
         'Get product name for given code:  NAME code:int\nLeave blank to get name for current data.'
@@ -69,7 +78,7 @@ class FoodREPL(cmd.Cmd):
             self.code = args[0]
             self.data = get_data(self.code)
             self.name = self.data.get('product', {}).get('product_name')
-        print(f'Product name: {self.name}')
+        print(f'Product name: {self.name}\n')
 
     def do_ingredients(self, arg):
         'Get ingredients for given code:  INGREDIENTS code:int\nLeave blank to get ingredients for current data.'
@@ -79,7 +88,7 @@ class FoodREPL(cmd.Cmd):
             self.data = get_data(self.code)
             self.name = self.data.get('product', {}).get('product_name')
         ingredients = self.data.get('product', {}).get('ingredients_text')
-        print(f'{self.name} ingredients: {ingredients}')
+        print(f'{self.name} ingredients: {ingredients}\n')
 
     def do_nutriinfo(self, arg):
         'Get nutritional information per 100g for given code:  NUTRIINFO code:int\nLeave blank to get nutrition for current data.'
@@ -99,18 +108,23 @@ class FoodREPL(cmd.Cmd):
         nutri_dataframe = pd.DataFrame(nutri_info)
         print(f'Nutrional information for product: {self.name}')
         print(nutri_dataframe.to_string(index=False))
+        print()
 
     def do_nutriscore(self, arg):
-            'Get Nutri-Score for given code:  NUTRISCORE code:int\nLeave blank to get Nutri-Score for current data.'
-            args = shlex.split(arg)
-            if len(args) > 0:
-                self.code = args[0]
-                self.data = get_data(self.code)
-                self.name = self.data.get('product', {}).get('product_name')
-            nutri_score = self.data.get('product', {}).get('nutriscore_grade')
-            print(f'{self.name} Nutri-Score: {str(nutri_score).upper()}')
+        'Get Nutri-Score for given code:  NUTRISCORE code:int\nLeave blank to get Nutri-Score for current data.\nThe Nutri-Score compares the nutrional value of products in the same category.'
+        args = shlex.split(arg)
+        if len(args) > 0:
+            self.code = args[0]
+            self.data = get_data(self.code)
+            self.name = self.data.get('product', {}).get('product_name')
+        nutri_score = self.data.get('product', {}).get('nutriscore_grade')
+        print(f'{self.name} Nutri-Score: {str(nutri_score).upper()}')
+        print(self.nutri_score_desc.get(nutri_score))
+        print()
 
-        
+    def do_dietary(self, arg):
+        'Get allergens and vegan/vegetarian status for given code:  DIETARY code:int\nLeave blank to get dietary information for current data.'
+
 
 if __name__ == '__main__':
     FoodREPL().cmdloop()
