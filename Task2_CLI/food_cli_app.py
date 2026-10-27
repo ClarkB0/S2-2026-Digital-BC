@@ -82,6 +82,7 @@ class FoodREPL(cmd.Cmd):
         args = shlex.split(arg)
         if len(args) == 0:
             print(self.code)
+            print()
         else:
             self.code = args[0]
             print(f'Current code set to {self.code}\n')
@@ -95,7 +96,7 @@ class FoodREPL(cmd.Cmd):
         self.name = self.data.get('product', {}).get('product_name')
 
     def do_dumpdata(self, arg):
-        'Dump current data to output.json:  DUMPDATA'
+        'Dump current data to "output.json":  DUMPDATA'
         try:
             with open('output.json', 'w') as file:
                 json.dump(self.data, file, indent=4)
@@ -104,13 +105,23 @@ class FoodREPL(cmd.Cmd):
             print('Error writing to file.\n')
 
     def do_name(self, arg):
-        'Get product name for given code:  NAME code:int\nLeave blank to get name for current data.'
+        'Get product name for given code:  NAME code:int\nLeave blank to get name for current data.\nLeave blank to get current code.'
         args = shlex.split(arg)
         if len(args) > 0:
             self.code = args[0]
             self.data = get_data(self.code)
             self.name = self.data.get('product', {}).get('product_name')
         print(f'Product name: {self.name}\n')
+
+    def do_category(self, arg):
+        'Get the category for given code:  CATEGORY code:int\nLeave blank to get category for current data.'
+        args = shlex.split(arg)
+        if len(args) > 0:
+            self.code = args[0]
+            self.data = get_data(self.code)
+            self.name = self.data.get('product', {}).get('product_name')
+        category = self.data.get('product', {}).get('categories')
+        print(f'{self.name} category: {category}\n')
 
     def do_ingredients(self, arg):
         'Get ingredients for given code:  INGREDIENTS code:int\nLeave blank to get ingredients for current data.'
