@@ -57,7 +57,7 @@ class FoodREPL(cmd.Cmd):
         self.code = None
         self.data = {}
         self.name = 'None'
-        self.nutri_stats = {'Energy': {'value': 'energy-kj_100g', 'unit': 'energy-kj_unit'},
+        self.nutri_stats = {'Energy': {'value': 'energy_100g', 'unit': 'energy-kj_unit'},
                             'Fats': {'value': 'fat_100g', 'unit': 'fat_unit'},
                             'Sat Fats': {'value': 'saturated-fat_100g', 'unit': 'saturated-fat_unit'},
                             'Sodium': {'value': 'sodium_100g', 'unit': 'sodium_unit'},

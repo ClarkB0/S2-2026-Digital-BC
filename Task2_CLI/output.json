@@ -1,139 +1,116 @@
 {
-    "code": "9300652009491",
+    "code": "4065019127878",
     "product": {
-        "_id": "9300652009491",
+        "_id": "4065019127878",
         "_keywords": [
-            "breakfast",
-            "cereal",
-            "sanitarium",
-            "weetbix"
+            "aldi",
+            "hamburger",
+            "sandwiche"
         ],
         "added_countries_tags": [],
-        "additives_n": 0,
         "additives_original_tags": [],
         "additives_tags": [],
-        "allergens": "gluten",
-        "allergens_from_ingredients": "en:gluten, en:gluten, : gluten, wheat",
-        "allergens_from_user": "(en) en:gluten, en:gluten",
-        "allergens_hierarchy": [
-            "en:gluten"
-        ],
+        "allergens": "",
+        "allergens_from_ingredients": "",
+        "allergens_from_user": "(en) ",
+        "allergens_hierarchy": [],
         "allergens_lc": "en",
-        "allergens_tags": [
-            "en:gluten"
-        ],
+        "allergens_tags": [],
         "amino_acids_tags": [],
-        "brands": "Sanitarium",
+        "brands": "Aldi",
         "brands_tags": [
-            "Sanitarium"
+            "aldi"
         ],
-        "categories": "Breakfast cereals",
+        "categories": "Hamburgers",
         "categories_hierarchy": [
-            "en:plant-based-foods-and-beverages",
-            "en:plant-based-foods",
-            "en:breakfasts",
-            "en:cereals-and-potatoes",
-            "en:cereals-and-their-products",
-            "en:breakfast-cereals"
+            "en:sandwiches",
+            "en:hamburgers"
         ],
         "categories_lc": "en",
         "categories_properties": {
-            "agribalyse_proxy_food_code:en": "32135",
-            "ciqual_food_code:en": "32003"
+            "ciqual_food_code:en": "25522"
         },
         "categories_properties_tags": [
             "all-products",
             "categories-known",
             "agribalyse-food-code-unknown",
-            "agribalyse-proxy-food-code-32135",
-            "agribalyse-proxy-food-code-known",
-            "ciqual-food-code-32003",
+            "agribalyse-proxy-food-code-unknown",
+            "ciqual-food-code-25522",
             "ciqual-food-code-known",
-            "agribalyse-known",
-            "agribalyse-32135"
+            "agribalyse-unknown"
         ],
         "categories_tags": [
-            "en:plant-based-foods-and-beverages",
-            "en:plant-based-foods",
-            "en:breakfasts",
-            "en:cereals-and-potatoes",
-            "en:cereals-and-their-products",
-            "en:breakfast-cereals"
+            "en:sandwiches",
+            "en:hamburgers"
         ],
         "checkers_tags": [],
-        "code": "9300652009491",
+        "cities_tags": [],
+        "code": "4065019127878",
         "codes_tags": [
             "code-13",
-            "9300652009xxx",
-            "930065200xxxx",
-            "93006520xxxxx",
-            "9300652xxxxxx",
-            "930065xxxxxxx",
-            "93006xxxxxxxx",
-            "9300xxxxxxxxx",
-            "930xxxxxxxxxx",
-            "93xxxxxxxxxxx",
-            "9xxxxxxxxxxxx"
+            "4065019127xxx",
+            "406501912xxxx",
+            "40650191xxxxx",
+            "4065019xxxxxx",
+            "406501xxxxxxx",
+            "40650xxxxxxxx",
+            "4065xxxxxxxxx",
+            "406xxxxxxxxxx",
+            "40xxxxxxxxxxx",
+            "4xxxxxxxxxxxx"
         ],
-        "compared_to_category": "en:breakfast-cereals",
+        "compared_to_category": "en:hamburgers",
         "complete": 0,
-        "completeness": 0.575,
+        "completeness": 0.4,
         "correctors_tags": [
-            "stephbux"
+            "macrofactor",
+            "bertusdendroef"
         ],
-        "countries": "Australia",
+        "countries": "Netherlands",
         "countries_hierarchy": [
-            "en:australia"
+            "en:netherlands"
         ],
         "countries_lc": "en",
         "countries_tags": [
-            "en:australia"
+            "en:netherlands"
         ],
-        "created_t": 1755433316,
+        "created_t": 1713718979,
         "creator": "macrofactor",
         "data_quality_bugs_tags": [],
         "data_quality_errors_tags": [],
         "data_quality_info_tags": [
             "en:no-packaging-data",
-            "en:ingredients-percent-analysis-ok",
-            "en:sum-of-ingredients-with-unspecified-percent-lesser-than-10",
+            "en:ecoscore-extended-data-not-computed",
             "en:food-groups-1-known",
             "en:food-groups-2-known",
             "en:food-groups-3-unknown"
         ],
         "data_quality_tags": [
             "en:no-packaging-data",
-            "en:ingredients-percent-analysis-ok",
-            "en:sum-of-ingredients-with-unspecified-percent-lesser-than-10",
+            "en:ecoscore-extended-data-not-computed",
             "en:food-groups-1-known",
             "en:food-groups-2-known",
             "en:food-groups-3-unknown",
-            "en:ingredients-number-of-languages-above-1",
-            "en:ingredients-number-of-languages-2",
-            "en:ingredients-language-mismatch-en-contains-fr",
-            "en:ingredients-unknown-score-above-0",
-            "en:ingredients-50-percent-unknown",
             "en:serving-quantity-defined-but-quantity-undefined",
-            "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
-            "en:environmental-score-packaging-packaging-data-missing",
-            "en:environmental-score-production-system-no-label"
+            "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown",
+            "en:ecoscore-packaging-packaging-data-missing",
+            "en:ecoscore-production-system-no-label",
+            "en:ecoscore-threatened-species-ingredients-missing"
         ],
         "data_quality_warnings_tags": [
-            "en:ingredients-number-of-languages-above-1",
-            "en:ingredients-number-of-languages-2",
-            "en:ingredients-language-mismatch-en-contains-fr",
-            "en:ingredients-unknown-score-above-0",
-            "en:ingredients-50-percent-unknown",
             "en:serving-quantity-defined-but-quantity-undefined",
-            "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
-            "en:environmental-score-packaging-packaging-data-missing",
-            "en:environmental-score-production-system-no-label"
+            "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown",
+            "en:ecoscore-packaging-packaging-data-missing",
+            "en:ecoscore-production-system-no-label",
+            "en:ecoscore-threatened-species-ingredients-missing"
         ],
-        "data_sources": "App - macrofactor, Apps, App - smoothie-openfoodfacts",
+        "data_sources": "App - macrofactor, Apps",
         "data_sources_tags": [
             "app-macrofactor",
-            "apps",
-            "app-smoothie-openfoodfacts"
+            "apps"
+        ],
+        "debug_param_sorted_langs": [
+            "en"
         ],
         "ecoscore_data": {
             "adjustments": {
@@ -355,6 +332,7 @@
                     "warning": "origins_are_100_percent_unknown"
                 },
                 "packaging": {
+                    "non_recyclable_and_non_biodegradable_materials": 1,
                     "value": -15,
                     "warning": "packaging_data_missing"
                 },
@@ -363,767 +341,72 @@
                     "value": 0,
                     "warning": "no_label"
                 },
-                "threatened_species": {}
+                "threatened_species": {
+                    "warning": "ingredients_missing"
+                }
             },
             "agribalyse": {
-                "agribalyse_proxy_food_code": "32135",
-                "co2_agriculture": 2.4106751,
-                "co2_consumption": 0,
-                "co2_distribution": 0.019437894,
-                "co2_packaging": 0.28123298,
-                "co2_processing": 0.53688699,
-                "co2_total": 3.502316864,
-                "co2_transportation": 0.2540839,
-                "code": "32135",
-                "dqr": "4.03",
-                "ef_agriculture": 0.49403158,
-                "ef_consumption": 0,
-                "ef_distribution": 0.0047895045,
-                "ef_packaging": 0.023591079,
-                "ef_processing": 0.078951852,
-                "ef_total": 0.6258899635,
-                "ef_transportation": 0.024525948,
-                "is_beverage": 0,
-                "name_en": "Breakfast cereals, mix of puffed or extruded cereals, fortified with vitamins and chemical elements",
-                "name_fr": "Multi-c\u00e9r\u00e9ales souffl\u00e9es ou extrud\u00e9es, enrichies en vitamines et min\u00e9raux",
-                "score": 45,
-                "version": "3.1.1"
-            },
-            "grade": "e",
-            "grades": {
-                "ad": "e",
-                "al": "e",
-                "at": "e",
-                "ax": "e",
-                "ba": "e",
-                "be": "e",
-                "bg": "e",
-                "ch": "e",
-                "cy": "e",
-                "cz": "e",
-                "de": "e",
-                "dk": "e",
-                "dz": "e",
-                "ee": "e",
-                "eg": "e",
-                "es": "e",
-                "fi": "e",
-                "fo": "e",
-                "fr": "e",
-                "gg": "e",
-                "gi": "e",
-                "gr": "e",
-                "hr": "e",
-                "hu": "e",
-                "ie": "e",
-                "il": "e",
-                "im": "e",
-                "is": "e",
-                "it": "e",
-                "je": "e",
-                "lb": "e",
-                "li": "e",
-                "lt": "e",
-                "lu": "e",
-                "lv": "e",
-                "ly": "e",
-                "ma": "e",
-                "mc": "e",
-                "md": "e",
-                "me": "e",
-                "mk": "e",
-                "mt": "e",
-                "nl": "e",
-                "no": "e",
-                "pl": "e",
-                "ps": "e",
-                "pt": "e",
-                "ro": "e",
-                "rs": "e",
-                "se": "e",
-                "si": "e",
-                "sj": "e",
-                "sk": "e",
-                "sm": "e",
-                "sy": "e",
-                "tn": "e",
-                "tr": "e",
-                "ua": "e",
-                "uk": "e",
-                "us": "e",
-                "va": "e",
-                "world": "e",
-                "xk": "e"
+                "warning": "missing_agribalyse_match"
             },
             "missing": {
+                "agb_category": 1,
+                "ingredients": 1,
                 "labels": 1,
                 "origins": 1,
                 "packagings": 1
             },
-            "missing_data_warning": 1,
+            "missing_agribalyse_match_warning": 1,
             "missing_key_data": 1,
-            "previous_data": {
-                "agribalyse": {
-                    "warning": "missing_agribalyse_match"
-                },
-                "grade": "unknown",
-                "score": null
-            },
-            "score": 25,
-            "scores": {
-                "ad": 25,
-                "al": 25,
-                "at": 25,
-                "ax": 25,
-                "ba": 25,
-                "be": 25,
-                "bg": 25,
-                "ch": 25,
-                "cy": 25,
-                "cz": 25,
-                "de": 25,
-                "dk": 25,
-                "dz": 25,
-                "ee": 25,
-                "eg": 25,
-                "es": 25,
-                "fi": 25,
-                "fo": 25,
-                "fr": 25,
-                "gg": 25,
-                "gi": 25,
-                "gr": 25,
-                "hr": 25,
-                "hu": 25,
-                "ie": 25,
-                "il": 25,
-                "im": 25,
-                "is": 25,
-                "it": 25,
-                "je": 25,
-                "lb": 25,
-                "li": 25,
-                "lt": 25,
-                "lu": 25,
-                "lv": 25,
-                "ly": 25,
-                "ma": 25,
-                "mc": 25,
-                "md": 25,
-                "me": 25,
-                "mk": 25,
-                "mt": 25,
-                "nl": 25,
-                "no": 25,
-                "pl": 25,
-                "ps": 25,
-                "pt": 25,
-                "ro": 25,
-                "rs": 25,
-                "se": 25,
-                "si": 25,
-                "sj": 25,
-                "sk": 25,
-                "sm": 25,
-                "sy": 25,
-                "tn": 25,
-                "tr": 25,
-                "ua": 25,
-                "uk": 25,
-                "us": 25,
-                "va": 25,
-                "world": 25,
-                "xk": 25
-            },
-            "status": "known"
+            "scores": {},
+            "status": "unknown"
         },
-        "ecoscore_grade": "e",
-        "ecoscore_score": 25,
+        "ecoscore_grade": "unknown",
         "ecoscore_tags": [
-            "e"
+            "unknown"
         ],
         "editors_tags": [
-            "macrofactor",
-            "roboto-app",
-            "stephbux"
+            "bertusdendroef",
+            "macrofactor"
         ],
+        "emb_codes": "",
+        "emb_codes_hierarchy": [],
+        "emb_codes_lc": "en",
+        "emb_codes_tags": [],
         "entry_dates_tags": [
-            "2025-08-17",
-            "2025-08",
-            "2025"
+            "2024-04-21",
+            "2024-04",
+            "2024"
         ],
-        "food_groups": "en:breakfast-cereals",
+        "expiration_date": "",
+        "food_groups": "en:sandwiches",
         "food_groups_tags": [
-            "en:cereals-and-potatoes",
-            "en:breakfast-cereals"
+            "en:composite-foods",
+            "en:sandwiches"
         ],
-        "id": "9300652009491",
-        "image_ingredients_small_url": "https://images.openfoodfacts.net/images/products/930/065/200/9491/ingredients_en.4.200.jpg",
-        "image_ingredients_thumb_url": "https://images.openfoodfacts.net/images/products/930/065/200/9491/ingredients_en.4.100.jpg",
-        "image_ingredients_url": "https://images.openfoodfacts.net/images/products/930/065/200/9491/ingredients_en.4.400.jpg",
-        "image_nutrition_small_url": "https://images.openfoodfacts.net/images/products/930/065/200/9491/nutrition_en.7.200.jpg",
-        "image_nutrition_thumb_url": "https://images.openfoodfacts.net/images/products/930/065/200/9491/nutrition_en.7.100.jpg",
-        "image_nutrition_url": "https://images.openfoodfacts.net/images/products/930/065/200/9491/nutrition_en.7.400.jpg",
-        "images": {
-            "1": {
-                "sizes": {
-                    "100": {
-                        "h": 100,
-                        "w": 75
-                    },
-                    "400": {
-                        "h": 400,
-                        "w": 300
-                    },
-                    "full": {
-                        "h": 4032,
-                        "w": 3024
-                    }
-                },
-                "uploaded_t": 1757367807,
-                "uploader": "stephbux"
-            },
-            "ingredients_en": {
-                "imgid": "1",
-                "rev": "4",
-                "sizes": {
-                    "100": {
-                        "h": 100,
-                        "w": 75
-                    },
-                    "200": {
-                        "h": 200,
-                        "w": 150
-                    },
-                    "400": {
-                        "h": 400,
-                        "w": 300
-                    },
-                    "full": {
-                        "h": 4032,
-                        "w": 3024
-                    }
-                }
-            },
-            "nutrition_en": {
-                "coordinates_image_size": "full",
-                "imgid": "1",
-                "rev": "7",
-                "sizes": {
-                    "100": {
-                        "h": 100,
-                        "w": 97
-                    },
-                    "200": {
-                        "h": 200,
-                        "w": 194
-                    },
-                    "400": {
-                        "h": 400,
-                        "w": 388
-                    },
-                    "full": {
-                        "h": 2828,
-                        "w": 2741
-                    }
-                },
-                "x1": 133,
-                "x2": 2874,
-                "y1": 760,
-                "y2": 3588
-            }
-        },
+        "generic_name": "",
+        "generic_name_en": "",
+        "id": "4065019127878",
         "informers_tags": [
             "macrofactor",
-            "stephbux",
-            "roboto-app"
-        ],
-        "ingredients": [
-            {
-                "ciqual_proxy_food_code": "9410",
-                "id": "en:wheat",
-                "is_in_taxonomy": 1,
-                "labels": "en:whole-grain",
-                "percent": 97,
-                "percent_estimate": 97,
-                "percent_max": 97,
-                "percent_min": 97,
-                "text": "wheat",
-                "vegan": "yes",
-                "vegetarian": "yes"
-            },
-            {
-                "ciqual_proxy_food_code": "31016",
-                "ecobalyse_code": "8f075c25-9ebf-430c-b41d-51d165c6e0d8",
-                "id": "en:unrefined-sugar",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 1.58333333333333,
-                "percent_max": 3,
-                "percent_min": 0.166666666666667,
-                "text": "raw sugar",
-                "vegan": "yes",
-                "vegetarian": "yes"
-            },
-            {
-                "ciqual_food_code": "11058",
-                "id": "en:salt",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.337,
-                "percent_max": 0.674,
-                "percent_min": 0,
-                "text": "salt",
-                "vegan": "yes",
-                "vegetarian": "yes"
-            },
-            {
-                "id": "en:barley-malt-extract",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.337,
-                "percent_max": 0.674,
-                "percent_min": 0,
-                "text": "barley malt extract",
-                "vegan": "yes",
-                "vegetarian": "yes"
-            },
-            {
-                "id": "en:vitamins",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.337,
-                "percent_max": 0.674,
-                "percent_min": 0,
-                "text": "vitamins",
-                "vegan": "yes",
-                "vegetarian": "yes"
-            },
-            {
-                "id": "en:e375",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.202833333333331,
-                "percent_max": 0.674,
-                "percent_min": 0,
-                "text": "niacin",
-                "vegan": "maybe",
-                "vegetarian": "maybe"
-            },
-            {
-                "id": "en:thiamin",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.101416666666665,
-                "percent_max": 0.566666666666666,
-                "percent_min": 0,
-                "text": "thiamin",
-                "vegan": "yes",
-                "vegetarian": "yes"
-            },
-            {
-                "id": "en:e101",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.0507083333333327,
-                "percent_max": 0.566666666666666,
-                "percent_min": 0,
-                "text": "riboflavin",
-                "vegan": "maybe",
-                "vegetarian": "yes"
-            },
-            {
-                "id": "en:folate",
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.0253541666666663,
-                "percent_max": 0.404761904761904,
-                "percent_min": 0,
-                "text": "folate",
-                "vegan": "yes",
-                "vegetarian": "yes"
-            },
-            {
-                "id": "en:minerals",
-                "ingredients": [
-                    {
-                        "id": "en:iron",
-                        "is_in_taxonomy": 1,
-                        "percent_estimate": 0.0126770833333296,
-                        "percent_max": 0.404761904761904,
-                        "percent_min": 0,
-                        "text": "iron"
-                    }
-                ],
-                "is_in_taxonomy": 1,
-                "percent_estimate": 0.0126770833333296,
-                "percent_max": 0.404761904761904,
-                "percent_min": 0,
-                "text": "mineral"
-            },
-            {
-                "id": "en:ingredients",
-                "ingredients": [
-                    {
-                        "id": "en:ble-complet",
-                        "is_in_taxonomy": 0,
-                        "percent_estimate": 0.00633854166666481,
-                        "percent_max": 0.392619047619047,
-                        "percent_min": 0,
-                        "text": "Bl\u00e9 complet"
-                    }
-                ],
-                "is_in_taxonomy": 0,
-                "percent_estimate": 0.00633854166666481,
-                "percent_max": 0.404761904761904,
-                "percent_min": 0,
-                "text": "INGR\u00c9DIENTS"
-            },
-            {
-                "id": "en:sucre-brut",
-                "is_in_taxonomy": 0,
-                "percent_estimate": 0.0031692708333324,
-                "percent_max": 0.283333333333333,
-                "percent_min": 0,
-                "text": "sucre brut"
-            },
-            {
-                "id": "en:sel",
-                "is_in_taxonomy": 0,
-                "percent_estimate": 0.00158463541666265,
-                "percent_max": 0.283333333333333,
-                "percent_min": 0,
-                "text": "sel"
-            },
-            {
-                "id": "en:extrait-de-malt-d-orge",
-                "is_in_taxonomy": 0,
-                "percent_estimate": 0.000792317708331325,
-                "percent_max": 0.283333333333333,
-                "percent_min": 0,
-                "text": "extrait de malt d'orge"
-            },
-            {
-                "id": "en:vitamines",
-                "ingredients": [
-                    {
-                        "id": "en:83",
-                        "is_in_taxonomy": 0,
-                        "percent_estimate": 0.000198079427082831,
-                        "percent_max": 0.283333333333333,
-                        "percent_min": 0,
-                        "text": "83"
-                    },
-                    {
-                        "id": "en:thiamin",
-                        "is_in_taxonomy": 1,
-                        "percent_estimate": 9.90397135414156e-05,
-                        "percent_max": 0.141666666666666,
-                        "percent_min": 0,
-                        "text": "B1",
-                        "vegan": "yes",
-                        "vegetarian": "yes"
-                    },
-                    {
-                        "id": "en:e101",
-                        "is_in_taxonomy": 1,
-                        "percent_estimate": 4.95198567707078e-05,
-                        "percent_max": 0.0944444444444443,
-                        "percent_min": 0,
-                        "text": "B2",
-                        "vegan": "maybe",
-                        "vegetarian": "yes"
-                    },
-                    {
-                        "id": "en:acide-folique",
-                        "is_in_taxonomy": 0,
-                        "percent_estimate": 4.95198567707078e-05,
-                        "percent_max": 0.0944444444444443,
-                        "percent_min": 0,
-                        "text": "acide folique"
-                    }
-                ],
-                "is_in_taxonomy": 0,
-                "percent_estimate": 0.000396158854165662,
-                "percent_max": 0.283333333333333,
-                "percent_min": 0,
-                "text": "vitamines"
-            },
-            {
-                "id": "en:mineraux",
-                "ingredients": [
-                    {
-                        "id": "en:fer",
-                        "is_in_taxonomy": 0,
-                        "percent_estimate": 0.000198079427079279,
-                        "percent_max": 0.283333333333333,
-                        "percent_min": 0,
-                        "text": "fer"
-                    }
-                ],
-                "is_in_taxonomy": 0,
-                "percent_estimate": 0.000198079427079279,
-                "percent_max": 0.283333333333333,
-                "percent_min": 0,
-                "text": "min\u00e9raux"
-            },
-            {
-                "id": "en:contient",
-                "is_in_taxonomy": 0,
-                "percent_estimate": 9.90397135396393e-05,
-                "percent_max": 0.283333333333333,
-                "percent_min": 0,
-                "text": "Contient"
-            },
-            {
-                "id": "en:ble",
-                "is_in_taxonomy": 0,
-                "percent_estimate": 4.95198567733723e-05,
-                "percent_max": 0.177083333333333,
-                "percent_min": 0,
-                "text": "bl\u00e9"
-            },
-            {
-                "id": "en:peut-contenir",
-                "ingredients": [
-                    {
-                        "id": "en:du-lupin",
-                        "is_in_taxonomy": 0,
-                        "percent_estimate": 4.95198567733723e-05,
-                        "percent_max": 0.177083333333333,
-                        "percent_min": 0,
-                        "text": "du lupin"
-                    }
-                ],
-                "is_in_taxonomy": 0,
-                "percent_estimate": 4.95198567733723e-05,
-                "percent_max": 0.177083333333333,
-                "percent_min": 0,
-                "text": "Peut contenir"
-            }
-        ],
-        "ingredients_analysis": {
-            "en:palm-oil-content-unknown": [
-                "en:ingredients",
-                "en:ble-complet",
-                "en:sucre-brut",
-                "en:sel",
-                "en:extrait-de-malt-d-orge",
-                "en:vitamines",
-                "en:83",
-                "en:acide-folique",
-                "en:mineraux",
-                "en:fer",
-                "en:contient",
-                "en:ble",
-                "en:peut-contenir",
-                "en:du-lupin"
-            ],
-            "en:vegan-status-unknown": [
-                "en:iron",
-                "en:ingredients",
-                "en:ble-complet",
-                "en:sucre-brut",
-                "en:sel",
-                "en:extrait-de-malt-d-orge",
-                "en:vitamines",
-                "en:83",
-                "en:acide-folique",
-                "en:mineraux",
-                "en:fer",
-                "en:contient",
-                "en:ble",
-                "en:peut-contenir",
-                "en:du-lupin"
-            ],
-            "en:vegetarian-status-unknown": [
-                "en:iron",
-                "en:ingredients",
-                "en:ble-complet",
-                "en:sucre-brut",
-                "en:sel",
-                "en:extrait-de-malt-d-orge",
-                "en:vitamines",
-                "en:83",
-                "en:acide-folique",
-                "en:mineraux",
-                "en:fer",
-                "en:contient",
-                "en:ble",
-                "en:peut-contenir",
-                "en:du-lupin"
-            ]
-        },
-        "ingredients_analysis_tags": [
-            "en:palm-oil-content-unknown",
-            "en:vegan-status-unknown",
-            "en:vegetarian-status-unknown"
-        ],
-        "ingredients_hierarchy": [
-            "en:wheat",
-            "en:cereal",
-            "en:unrefined-sugar",
-            "en:added-sugar",
-            "en:disaccharide",
-            "en:sugar",
-            "en:salt",
-            "en:barley-malt-extract",
-            "en:malt",
-            "en:malted-barley",
-            "en:vitamins",
-            "en:e375",
-            "en:thiamin",
-            "en:e101",
-            "en:folate",
-            "en:minerals",
-            "en:ingredients",
-            "en:sucre-brut",
-            "en:sel",
-            "en:extrait-de-malt-d-orge",
-            "en:vitamines",
-            "en:mineraux",
-            "en:contient",
-            "en:ble",
-            "en:peut-contenir",
-            "en:iron",
-            "en:ble-complet",
-            "en:83",
-            "en:acide-folique",
-            "en:fer",
-            "en:du-lupin"
+            "bertusdendroef"
         ],
         "ingredients_lc": "en",
-        "ingredients_n": "27",
-        "ingredients_n_tags": [
-            "27",
-            "21-30"
-        ],
-        "ingredients_non_nutritive_sweeteners_n": 0,
-        "ingredients_original_tags": [
-            "en:wheat",
-            "en:unrefined-sugar",
-            "en:salt",
-            "en:barley-malt-extract",
-            "en:vitamins",
-            "en:e375",
-            "en:thiamin",
-            "en:e101",
-            "en:folate",
-            "en:minerals",
-            "en:ingredients",
-            "en:sucre-brut",
-            "en:sel",
-            "en:extrait-de-malt-d-orge",
-            "en:vitamines",
-            "en:mineraux",
-            "en:contient",
-            "en:ble",
-            "en:peut-contenir",
-            "en:iron",
-            "en:ble-complet",
-            "en:83",
-            "en:thiamin",
-            "en:e101",
-            "en:acide-folique",
-            "en:fer",
-            "en:du-lupin"
-        ],
-        "ingredients_percent_analysis": 1,
-        "ingredients_sweeteners_n": 0,
-        "ingredients_tags": [
-            "en:wheat",
-            "en:cereal",
-            "en:unrefined-sugar",
-            "en:added-sugar",
-            "en:disaccharide",
-            "en:sugar",
-            "en:salt",
-            "en:barley-malt-extract",
-            "en:malt",
-            "en:malted-barley",
-            "en:vitamins",
-            "en:e375",
-            "en:thiamin",
-            "en:e101",
-            "en:folate",
-            "en:minerals",
-            "en:ingredients",
-            "en:sucre-brut",
-            "en:sel",
-            "en:extrait-de-malt-d-orge",
-            "en:vitamines",
-            "en:mineraux",
-            "en:contient",
-            "en:ble",
-            "en:peut-contenir",
-            "en:iron",
-            "en:ble-complet",
-            "en:83",
-            "en:acide-folique",
-            "en:fer",
-            "en:du-lupin"
-        ],
-        "ingredients_text": "Wholegrain wheat (97%), raw sugar, salt, barley malt extract, vitamins (niacin, thiamin, riboflavin, folate), mineral (iron). Contains: gluten, wheat. May contain: lupin. INGR\u00c9DIENTS: Bl\u00e9 complet (97%), sucre brut, sel, extrait de malt d'orge, vitamines (83, B1, B2, acide folique), min\u00e9raux (fer). Contient: gluten, bl\u00e9. Peut contenir: du lupin.",
-        "ingredients_text_en": "Wholegrain wheat (97%), raw sugar, salt, barley malt extract, vitamins (niacin, thiamin, riboflavin, folate), mineral (iron). Contains: gluten, wheat. May contain: lupin. INGR\u00c9DIENTS: Bl\u00e9 complet (97%), sucre brut, sel, extrait de malt d'orge, vitamines (83, B1, B2, acide folique), min\u00e9raux (fer). Contient: gluten, bl\u00e9. Peut contenir: du lupin.",
-        "ingredients_text_with_allergens": "Wholegrain wheat (97%), raw sugar, salt, barley malt extract, vitamins (niacin, thiamin, riboflavin, folate), mineral (iron). Contains<span class=\"allergen\">: gluten</span>, <span class=\"allergen\">wheat</span>. May contain<span class=\"allergen\">: lupin</span>. INGR\u00c9DIENTS: Bl\u00e9 complet (97%), sucre brut, sel, extrait de malt d'orge, vitamines (83, B1, B2, acide folique), min\u00e9raux (fer). Contient: gluten, bl\u00e9. Peut contenir: du lupin.",
-        "ingredients_text_with_allergens_en": "Wholegrain wheat (97%), raw sugar, salt, barley malt extract, vitamins (niacin, thiamin, riboflavin, folate), mineral (iron). Contains<span class=\"allergen\">: gluten</span>, <span class=\"allergen\">wheat</span>. May contain<span class=\"allergen\">: lupin</span>. INGR\u00c9DIENTS: Bl\u00e9 complet (97%), sucre brut, sel, extrait de malt d'orge, vitamines (83, B1, B2, acide folique), min\u00e9raux (fer). Contient: gluten, bl\u00e9. Peut contenir: du lupin.",
-        "ingredients_with_specified_percent_n": 1,
-        "ingredients_with_specified_percent_sum": 97,
-        "ingredients_with_unspecified_percent_n": 21,
-        "ingredients_with_unspecified_percent_sum": 2.99999999999998,
-        "ingredients_without_ciqual_codes": [
-            "en:83",
-            "en:acide-folique",
-            "en:barley-malt-extract",
-            "en:ble",
-            "en:ble-complet",
-            "en:contient",
-            "en:du-lupin",
-            "en:e101",
-            "en:e375",
-            "en:extrait-de-malt-d-orge",
-            "en:fer",
-            "en:folate",
-            "en:ingredients",
-            "en:iron",
-            "en:minerals",
-            "en:mineraux",
-            "en:peut-contenir",
-            "en:sel",
-            "en:sucre-brut",
-            "en:thiamin",
-            "en:vitamines",
-            "en:vitamins"
-        ],
-        "ingredients_without_ciqual_codes_n": 22,
-        "ingredients_without_ecobalyse_ids": [
-            "en:83",
-            "en:acide-folique",
-            "en:barley-malt-extract",
-            "en:ble",
-            "en:ble-complet",
-            "en:contient",
-            "en:du-lupin",
-            "en:e101",
-            "en:e375",
-            "en:extrait-de-malt-d-orge",
-            "en:fer",
-            "en:folate",
-            "en:ingredients",
-            "en:iron",
-            "en:minerals",
-            "en:mineraux",
-            "en:peut-contenir",
-            "en:salt",
-            "en:sel",
-            "en:sucre-brut",
-            "en:thiamin",
-            "en:vitamines",
-            "en:vitamins",
-            "en:wheat"
-        ],
-        "ingredients_without_ecobalyse_ids_n": 24,
+        "ingredients_text": "",
+        "ingredients_text_en": "",
+        "ingredients_text_with_allergens": "",
+        "ingredients_text_with_allergens_en": "",
         "interface_version_created": "20150316.jqm2",
-        "interface_version_modified": "20150316.jqm2",
-        "known_ingredients_n": 13,
+        "interface_version_modified": "20190830",
+        "labels": "",
+        "labels_hierarchy": [],
+        "labels_lc": "en",
+        "labels_tags": [],
         "lang": "en",
         "languages": {
-            "en:english": 4
+            "en:english": 1
         },
         "languages_codes": {
-            "en": 4
+            "en": 1
         },
         "languages_hierarchy": [
             "en:english"
@@ -1133,424 +416,221 @@
             "en:1"
         ],
         "last_edit_dates_tags": [
-            "2025-09-08",
-            "2025-09",
-            "2025"
+            "2024-04-21",
+            "2024-04",
+            "2024"
         ],
-        "last_editor": "roboto-app",
-        "last_image_dates_tags": [
-            "2025-09-08",
-            "2025-09",
-            "2025"
-        ],
-        "last_image_t": 1757367809,
-        "last_modified_by": "roboto-app",
-        "last_modified_t": 1757371753,
-        "last_updated_t": 1771285325,
+        "last_editor": "bertusdendroef",
+        "last_modified_by": "bertusdendroef",
+        "last_modified_t": 1713724045,
+        "last_updated_t": 1771284410,
         "lc": "en",
+        "link": "",
         "main_countries_tags": [],
-        "max_imgid": "1",
-        "minerals_tags": [
-            "en:mineral",
-            "en:iron"
-        ],
+        "manufacturing_places": "",
+        "manufacturing_places_hierarchy": [],
+        "manufacturing_places_lc": "en",
+        "manufacturing_places_tags": [],
+        "minerals_tags": [],
         "misc_tags": [
-            "en:environmental-score-changed",
-            "en:environmental-score-computed",
-            "en:environmental-score-grade-changed",
-            "en:environmental-score-missing-data-labels",
-            "en:environmental-score-missing-data-no-packagings",
-            "en:environmental-score-missing-data-origins",
-            "en:environmental-score-missing-data-packagings",
-            "en:environmental-score-missing-data-warning",
-            "en:nutriscore-2021-a-2023-a",
-            "en:nutriscore-2021-same-as-2023",
-            "en:nutriscore-computed",
-            "en:nutrition-all-nutriscore-values-known",
-            "en:nutrition-fruits-vegetables-legumes-estimate-from-ingredients",
-            "en:nutrition-fruits-vegetables-nuts-estimate-from-ingredients",
-            "en:packagings-empty",
-            "en:packagings-not-complete",
+            "en:nutrition-not-enough-data-to-compute-nutrition-score",
+            "en:nutriscore-missing-nutrition-data",
+            "en:nutriscore-missing-nutrition-data-sugars",
+            "en:nutriscore-not-computed",
+            "en:nutrition-no-fruits-vegetables-nuts",
+            "en:nutrition-no-fiber-or-fruits-vegetables-nuts",
             "en:packagings-number-of-components-0",
-            "en:some-ingredients-with-specified-percent",
+            "en:packagings-not-complete",
+            "en:packagings-empty",
+            "en:ecoscore-extended-data-not-computed",
+            "en:ecoscore-not-computed",
             "en:main-countries-new-product"
         ],
-        "nova_group_debug": "no nova group if too many ingredients are unknown: 14 out of 27",
-        "nova_group_error": "too_many_unknown_ingredients",
+        "nova_group_debug": "no nova group when the product does not have ingredients",
+        "nova_group_error": "missing_ingredients",
         "nova_groups_tags": [
             "unknown"
         ],
         "nucleotides_tags": [],
         "nutrient_levels": {
-            "fat": "low",
-            "salt": "moderate",
-            "saturated-fat": "low",
-            "sugars": "low"
+            "fat": "moderate",
+            "salt": "high",
+            "saturated-fat": "high"
         },
         "nutrient_levels_tags": [
-            "en:fat-in-low-quantity",
-            "en:saturated-fat-in-low-quantity",
-            "en:sugars-in-low-quantity",
-            "en:salt-in-moderate-quantity"
+            "en:fat-in-moderate-quantity",
+            "en:saturated-fat-in-high-quantity",
+            "en:salt-in-high-quantity"
         ],
         "nutriments": {
-            "carbohydrates": 65.7575757575758,
-            "carbohydrates_100g": 65.7575757575758,
-            "carbohydrates_serving": 21.7,
+            "carbohydrates": 3.7,
+            "carbohydrates_100g": 3.7,
+            "carbohydrates_serving": 3.7,
             "carbohydrates_unit": "g",
-            "carbohydrates_value": 65.7575757575758,
-            "energy": 1354,
-            "energy-kcal": 323.744545454545,
-            "energy-kcal_100g": 323.744545454545,
-            "energy-kcal_serving": 107,
+            "carbohydrates_value": 3.7,
+            "energy": 1004,
+            "energy-kcal": 240,
+            "energy-kcal_100g": 240,
+            "energy-kcal_serving": 240,
             "energy-kcal_unit": "kcal",
-            "energy-kcal_value": 323.744545454545,
-            "energy_100g": 1354,
-            "energy_serving": 447,
+            "energy-kcal_value": 240,
+            "energy_100g": 1004,
+            "energy_serving": 1000,
             "energy_unit": "kJ",
-            "energy_value": 1354,
-            "fat": 1.21181818181818,
-            "fat_100g": 1.21181818181818,
-            "fat_serving": 0.4,
+            "energy_value": 1004,
+            "fat": 17,
+            "fat_100g": 17,
+            "fat_serving": 17,
             "fat_unit": "g",
-            "fat_value": 1.21181818181818,
-            "fiber": 13.030303030303,
-            "fiber_100g": 13.030303030303,
-            "fiber_serving": 4.3,
+            "fat_value": 17,
+            "fiber": 0.5,
+            "fiber_100g": 0.5,
+            "fiber_serving": 0.5,
             "fiber_unit": "g",
-            "fiber_value": 13.030303030303,
-            "iron": 0.00909090909090909,
-            "iron_100g": 0.00909090909090909,
-            "iron_serving": 0.003,
-            "iron_unit": "g",
-            "iron_value": 0.00909090909090909,
-            "magnesium": 0.103030303030303,
-            "magnesium_100g": 0.103030303030303,
-            "magnesium_serving": 0.034,
-            "magnesium_unit": "g",
-            "magnesium_value": 0.103030303030303,
-            "potassium": 0.363636363636364,
-            "potassium_100g": 0.363636363636364,
-            "potassium_serving": 0.12,
-            "potassium_unit": "g",
-            "potassium_value": 0.363636363636364,
-            "proteins": 12.4242424242424,
-            "proteins_100g": 12.4242424242424,
-            "proteins_serving": 4.1,
+            "fiber_value": 0.5,
+            "proteins": 17,
+            "proteins_100g": 17,
+            "proteins_serving": 17,
             "proteins_unit": "g",
-            "proteins_value": 12.4242424242424,
-            "salt": 0.674242424242424,
-            "salt_100g": 0.674242424242424,
-            "salt_serving": 0.222,
+            "proteins_value": 17,
+            "salt": 2.5,
+            "salt_100g": 2.5,
+            "salt_serving": 2.5,
             "salt_unit": "g",
-            "salt_value": 0.674242424242424,
-            "saturated-fat": 0.303030303030303,
-            "saturated-fat_100g": 0.303030303030303,
-            "saturated-fat_serving": 0.1,
+            "salt_value": 2.5,
+            "saturated-fat": 8.3,
+            "saturated-fat_100g": 8.3,
+            "saturated-fat_serving": 8.3,
             "saturated-fat_unit": "g",
-            "saturated-fat_value": 0.303030303030303,
-            "sodium": 0.26969696969697,
-            "sodium_100g": 0.26969696969697,
-            "sodium_serving": 0.089,
+            "saturated-fat_value": 8.3,
+            "sodium": 1,
+            "sodium_100g": 1,
+            "sodium_serving": 1,
             "sodium_unit": "g",
-            "sodium_value": 0.26969696969697,
-            "sugars": 3.03030303030303,
-            "sugars_100g": 3.03030303030303,
-            "sugars_serving": 1,
-            "sugars_unit": "g",
-            "sugars_value": 3.03030303030303
+            "sodium_value": 1
         },
         "nutriscore": {
             "2021": {
                 "category_available": 1,
                 "data": {
-                    "energy": 1350,
-                    "energy_points": 4,
-                    "energy_value": 1350,
-                    "fiber": 13,
-                    "fiber_points": 5,
-                    "fiber_value": 13,
+                    "energy": 1004,
+                    "fiber": 0.5,
                     "fruits_vegetables_nuts_colza_walnut_olive_oils": 0,
-                    "fruits_vegetables_nuts_colza_walnut_olive_oils_points": 0,
-                    "fruits_vegetables_nuts_colza_walnut_olive_oils_value": 0,
                     "is_beverage": 0,
                     "is_cheese": 0,
                     "is_fat": 0,
                     "is_water": 0,
-                    "negative_points": 6,
-                    "positive_points": 10,
-                    "proteins": 12.4,
-                    "proteins_points": 5,
-                    "proteins_value": 12.4,
-                    "saturated_fat": 0.303,
-                    "saturated_fat_points": 0,
-                    "saturated_fat_value": 0.3,
-                    "sodium": 270,
-                    "sodium_points": 2,
-                    "sodium_value": 270,
-                    "sugars": 3.03,
-                    "sugars_points": 0,
-                    "sugars_value": 3
+                    "proteins": 17,
+                    "saturated_fat": 8.3,
+                    "sodium": 1000,
+                    "sugars": null
                 },
-                "grade": "a",
-                "nutrients_available": 1,
+                "grade": "unknown",
+                "nutrients_available": 0,
                 "nutriscore_applicable": 1,
-                "nutriscore_computed": 1,
-                "score": -4
+                "nutriscore_computed": 0
             },
             "2023": {
                 "category_available": 1,
                 "data": {
-                    "components": {
-                        "negative": [
-                            {
-                                "id": "energy",
-                                "points": 4,
-                                "points_max": 10,
-                                "unit": "kJ",
-                                "value": 1350
-                            },
-                            {
-                                "id": "sugars",
-                                "points": 0,
-                                "points_max": 15,
-                                "unit": "g",
-                                "value": 3.03
-                            },
-                            {
-                                "id": "saturated_fat",
-                                "points": 0,
-                                "points_max": 10,
-                                "unit": "g",
-                                "value": 0.3
-                            },
-                            {
-                                "id": "salt",
-                                "points": 3,
-                                "points_max": 20,
-                                "unit": "g",
-                                "value": 0.67
-                            }
-                        ],
-                        "positive": [
-                            {
-                                "id": "proteins",
-                                "points": 5,
-                                "points_max": 7,
-                                "unit": "g",
-                                "value": 12.4
-                            },
-                            {
-                                "id": "fiber",
-                                "points": 5,
-                                "points_max": 5,
-                                "unit": "g",
-                                "value": 13
-                            },
-                            {
-                                "id": "fruits_vegetables_legumes",
-                                "points": 0,
-                                "points_max": 5,
-                                "unit": "%",
-                                "value": 0
-                            }
-                        ]
-                    },
-                    "count_proteins": 1,
-                    "count_proteins_reason": "negative_points_less_than_11",
+                    "energy": 1004,
+                    "fiber": 0.5,
+                    "fruits_vegetables_legumes": null,
                     "is_beverage": 0,
                     "is_cheese": 0,
                     "is_fat_oil_nuts_seeds": 0,
                     "is_red_meat_product": 0,
                     "is_water": 0,
-                    "negative_points": 7,
-                    "negative_points_max": 55,
-                    "positive_nutrients": [
-                        "proteins",
-                        "fiber",
-                        "fruits_vegetables_legumes"
-                    ],
-                    "positive_points": 10,
-                    "positive_points_max": 17
+                    "proteins": 17,
+                    "salt": 2.5,
+                    "saturated_fat": 8.3,
+                    "sugars": null
                 },
-                "grade": "a",
-                "nutrients_available": 1,
+                "grade": "unknown",
+                "nutrients_available": 0,
                 "nutriscore_applicable": 1,
-                "nutriscore_computed": 1,
-                "score": -3
+                "nutriscore_computed": 0
             }
         },
         "nutriscore_2021_tags": [
-            "a"
+            "unknown"
         ],
         "nutriscore_2023_tags": [
-            "a"
+            "unknown"
         ],
-        "nutriscore_data": {
-            "components": {
-                "negative": [
-                    {
-                        "id": "energy",
-                        "points": 4,
-                        "points_max": 10,
-                        "unit": "kJ",
-                        "value": 1350
-                    },
-                    {
-                        "id": "sugars",
-                        "points": 0,
-                        "points_max": 15,
-                        "unit": "g",
-                        "value": 3.03
-                    },
-                    {
-                        "id": "saturated_fat",
-                        "points": 0,
-                        "points_max": 10,
-                        "unit": "g",
-                        "value": 0.3
-                    },
-                    {
-                        "id": "salt",
-                        "points": 3,
-                        "points_max": 20,
-                        "unit": "g",
-                        "value": 0.67
-                    }
-                ],
-                "positive": [
-                    {
-                        "id": "proteins",
-                        "points": 5,
-                        "points_max": 7,
-                        "unit": "g",
-                        "value": 12.4
-                    },
-                    {
-                        "id": "fiber",
-                        "points": 5,
-                        "points_max": 5,
-                        "unit": "g",
-                        "value": 13
-                    },
-                    {
-                        "id": "fruits_vegetables_legumes",
-                        "points": 0,
-                        "points_max": 5,
-                        "unit": "%",
-                        "value": 0
-                    }
-                ]
-            },
-            "count_proteins": 1,
-            "count_proteins_reason": "negative_points_less_than_11",
-            "grade": "a",
-            "is_beverage": 0,
-            "is_cheese": 0,
-            "is_fat_oil_nuts_seeds": 0,
-            "is_red_meat_product": 0,
-            "is_water": 0,
-            "negative_points": 7,
-            "negative_points_max": 55,
-            "positive_nutrients": [
-                "proteins",
-                "fiber",
-                "fruits_vegetables_legumes"
-            ],
-            "positive_points": 10,
-            "positive_points_max": 17,
-            "score": -3
-        },
-        "nutriscore_grade": "a",
-        "nutriscore_score": -3,
-        "nutriscore_score_opposite": 3,
+        "nutriscore_grade": "unknown",
         "nutriscore_tags": [
-            "a"
+            "unknown"
         ],
-        "nutriscore_version": "2023",
+        "nutriscore_version": "2021",
         "nutrition_data": "on",
         "nutrition_data_per": "100g",
         "nutrition_data_prepared_per": "100g",
-        "nutrition_grade_fr": "a",
-        "nutrition_grades": "a",
+        "nutrition_grade_fr": "unknown",
+        "nutrition_grades": "unknown",
         "nutrition_grades_tags": [
-            "a"
+            "unknown"
         ],
         "nutrition_score_beverage": 0,
-        "nutrition_score_debug": "",
-        "nutrition_score_warning_fruits_vegetables_legumes_estimate_from_ingredients": 1,
-        "nutrition_score_warning_fruits_vegetables_legumes_estimate_from_ingredients_value": 0,
-        "nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients": 1,
-        "nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients_value": 0,
+        "nutrition_score_debug": "missing sugars_100g",
+        "nutrition_score_warning_no_fruits_vegetables_nuts": 1,
+        "origin": "",
+        "origin_en": "",
+        "origins": "",
+        "origins_hierarchy": [],
+        "origins_lc": "en",
+        "origins_tags": [],
         "other_nutritional_substances_tags": [],
         "packaging_materials_tags": [],
         "packaging_recycling_tags": [],
         "packaging_shapes_tags": [],
+        "packaging_text": "",
+        "packaging_text_en": "",
         "packagings": [],
+        "packagings_complete": 0,
         "packagings_materials": {},
-        "photographers_tags": [
-            "stephbux"
-        ],
-        "pnns_groups_1": "Cereals and potatoes",
+        "photographers_tags": [],
+        "pnns_groups_1": "Composite foods",
         "pnns_groups_1_tags": [
-            "cereals-and-potatoes",
+            "composite-foods",
             "known"
         ],
-        "pnns_groups_2": "Breakfast cereals",
+        "pnns_groups_2": "Sandwiches",
         "pnns_groups_2_tags": [
-            "breakfast-cereals",
+            "sandwiches",
             "known"
         ],
-        "popularity_key": 12,
+        "popularity_key": 0,
         "popularity_tags": [
             "top-75-percent-scans-2025",
             "top-80-percent-scans-2025",
             "top-85-percent-scans-2025",
             "top-90-percent-scans-2025",
-            "top-10000-au-scans-2025",
-            "top-50000-au-scans-2025",
-            "top-100000-au-scans-2025",
-            "top-country-au-scans-2025"
+            "top-10000-nl-scans-2025",
+            "top-50000-nl-scans-2025",
+            "top-100000-nl-scans-2025",
+            "top-country-nl-scans-2025"
         ],
-        "product_name": "Weetbix",
-        "product_name_en": "Weetbix",
+        "product_name": "Hamburger",
+        "product_name_en": "Hamburger",
         "product_type": "food",
+        "purchase_places": "",
+        "purchase_places_hierarchy": [],
+        "purchase_places_lc": "en",
+        "purchase_places_tags": [],
+        "quantity": "",
         "removed_countries_tags": [],
-        "rev": 7,
+        "rev": 4,
         "scans_n": 1,
         "schema_version": 998,
-        "selected_images": {
-            "ingredients": {
-                "display": {
-                    "en": "https://images.openfoodfacts.net/images/products/930/065/200/9491/ingredients_en.4.400.jpg"
-                },
-                "small": {
-                    "en": "https://images.openfoodfacts.net/images/products/930/065/200/9491/ingredients_en.4.200.jpg"
-                },
-                "thumb": {
-                    "en": "https://images.openfoodfacts.net/images/products/930/065/200/9491/ingredients_en.4.100.jpg"
-                }
-            },
-            "nutrition": {
-                "display": {
-                    "en": "https://images.openfoodfacts.net/images/products/930/065/200/9491/nutrition_en.7.400.jpg"
-                },
-                "small": {
-                    "en": "https://images.openfoodfacts.net/images/products/930/065/200/9491/nutrition_en.7.200.jpg"
-                },
-                "thumb": {
-                    "en": "https://images.openfoodfacts.net/images/products/930/065/200/9491/nutrition_en.7.100.jpg"
-                }
-            }
-        },
-        "serving_quantity": 33,
+        "serving_quantity": 100,
         "serving_quantity_unit": "g",
-        "serving_size": "2 biscuit (33 g)",
-        "states": "To be completed, Nutrition facts completed, Ingredients completed, Expiration date to be completed, Packaging code to be completed, Characteristics to be completed, Origins to be completed, Categories completed, Brands completed, Packaging to be completed, Quantity to be completed, Product name completed, Photos to be validated, Packaging photo to be selected, Nutrition photo selected, Ingredients photo selected, Front photo to be selected, Photos uploaded",
+        "serving_size": "1.0 penen (100.0 g)",
+        "states": "To be completed, Nutrition facts completed, Ingredients to be completed, Expiration date to be completed, Packaging code to be completed, Characteristics to be completed, Origins to be completed, Categories completed, Brands completed, Packaging to be completed, Quantity to be completed, Product name completed, Photos to be uploaded",
         "states_hierarchy": [
             "en:to-be-completed",
             "en:nutrition-facts-completed",
-            "en:ingredients-completed",
+            "en:ingredients-to-be-completed",
             "en:expiration-date-to-be-completed",
             "en:packaging-code-to-be-completed",
             "en:characteristics-to-be-completed",
@@ -1560,17 +640,12 @@
             "en:packaging-to-be-completed",
             "en:quantity-to-be-completed",
             "en:product-name-completed",
-            "en:photos-to-be-validated",
-            "en:packaging-photo-to-be-selected",
-            "en:nutrition-photo-selected",
-            "en:ingredients-photo-selected",
-            "en:front-photo-to-be-selected",
-            "en:photos-uploaded"
+            "en:photos-to-be-uploaded"
         ],
         "states_tags": [
             "en:to-be-completed",
             "en:nutrition-facts-completed",
-            "en:ingredients-completed",
+            "en:ingredients-to-be-completed",
             "en:expiration-date-to-be-completed",
             "en:packaging-code-to-be-completed",
             "en:characteristics-to-be-completed",
@@ -1580,32 +655,26 @@
             "en:packaging-to-be-completed",
             "en:quantity-to-be-completed",
             "en:product-name-completed",
-            "en:photos-to-be-validated",
-            "en:packaging-photo-to-be-selected",
-            "en:nutrition-photo-selected",
-            "en:ingredients-photo-selected",
-            "en:front-photo-to-be-selected",
-            "en:photos-uploaded"
+            "en:photos-to-be-uploaded"
         ],
-        "traces": "lupin",
-        "traces_from_ingredients": ": lupin",
+        "stores": "Aldi",
+        "stores_hierarchy": [
+            "Aldi"
+        ],
+        "stores_lc": "en",
+        "stores_tags": [
+            "Aldi"
+        ],
+        "traces": "",
+        "traces_from_ingredients": "",
         "traces_from_user": "(en) ",
-        "traces_hierarchy": [
-            "en:lupin"
-        ],
+        "traces_hierarchy": [],
         "traces_lc": "en",
-        "traces_tags": [
-            "en:lupin"
-        ],
+        "traces_tags": [],
         "unique_scans_n": 1,
-        "unknown_ingredients_n": "14",
         "unknown_nutrients_tags": [],
-        "vitamins_tags": [
-            "en:niacin",
-            "en:thiamin",
-            "en:riboflavin",
-            "en:folate"
-        ],
+        "update_key": "sort",
+        "vitamins_tags": [],
         "weighers_tags": []
     },
     "status": 1,
