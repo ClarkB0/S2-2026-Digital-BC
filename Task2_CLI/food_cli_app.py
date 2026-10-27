@@ -73,8 +73,9 @@ class FoodREPL(cmd.Cmd):
     def _update_state(self, arg):
         args = shlex.split(arg)
         if len(args) > 0:
-            pass
-        pass
+            self.code = args[0]
+            self.data = get_data(self.code)
+            self.name = self.data.get('product', {}).get('product_name')
 
     def do_exit(self, arg):
         'Exit the application:  EXIT'
@@ -111,30 +112,19 @@ class FoodREPL(cmd.Cmd):
 
     def do_name(self, arg):
         'Get product name for given code:  NAME code:int\nLeave blank to get name for current data.\nLeave blank to get current code.'
-        args = shlex.split(arg)
-        if len(args) > 0:
-            self.code = args[0]
-            self.data = get_data(self.code)
-            self.name = self.data.get('product', {}).get('product_name')
+        self._update_state(arg)
         print(f'Product name: {self.name}\n')
 
     def do_category(self, arg):
         'Get the category for given code:  CATEGORY code:int\nLeave blank to get category for current data.'
-        args = shlex.split(arg)
-        if len(args) > 0:
-            self.code = args[0]
-            self.data = get_data(self.code)
-            self.name = self.data.get('product', {}).get('product_name')
+        self._update_state(arg)
         category = self.data.get('product', {}).get('categories')
         print(f'{self.name} category: {category}\n')
 
     def do_ingredients(self, arg):
         'Get ingredients for given code:  INGREDIENTS code:int\nLeave blank to get ingredients for current data.'
         args = shlex.split(arg)
-        if len(args) > 0:
-            self.code = args[0]
-            self.data = get_data(self.code)
-            self.name = self.data.get('product', {}).get('product_name')
+        self._update_state(arg)
         ingredients = self.data.get('product', {}).get('ingredients_text')
         print(f'{self.name} ingredients: {ingredients}')
         allergens = get_allergens(self.data)
@@ -142,10 +132,7 @@ class FoodREPL(cmd.Cmd):
 
     def do_nutriinfo(self, arg):
         'Get nutritional information per 100g for given code:  NUTRIINFO code:int\nLeave blank to get nutrition for current data.'
-        args = shlex.split(arg)
-        if len(args) > 0:
-            self.code = args[0]
-            self.data = get_data(self.code)
+        self._update_state(arg)
         nutri_data = self.data.get('product', {}).get('nutriments', {})
         nutri_info = {'Stat': [],
                       'Value': [],
@@ -156,17 +143,13 @@ class FoodREPL(cmd.Cmd):
             nutri_info['Value'].append(nutri_data.get(nutri_stats[stat]['value']))
             nutri_info['Unit'].append(nutri_data.get(nutri_stats[stat]['unit']))
         nutri_dataframe = pd.DataFrame(nutri_info)
-        print(f'Nutrional information for product (100g): {self.name}')
+        print(f'Nutrional information for {self.name} (100g)')
         print(nutri_dataframe.to_string(index=False))
         print()
 
     def do_nutriscore(self, arg):
         'Get Nutri-Score for given code:  NUTRISCORE code:int\nLeave blank to get Nutri-Score for current data.\nThe Nutri-Score compares the nutrional value of products in the same category.'
-        args = shlex.split(arg)
-        if len(args) > 0:
-            self.code = args[0]
-            self.data = get_data(self.code)
-            self.name = self.data.get('product', {}).get('product_name')
+        self._update_state(arg)
         nutri_score = self.data.get('product', {}).get('nutriscore_grade')
         print(f'{self.name} Nutri-Score: {str(nutri_score).upper()}')
         print(self.nutri_score_desc.get(nutri_score))
@@ -175,10 +158,7 @@ class FoodREPL(cmd.Cmd):
     def do_dietary(self, arg):
         'Get allergens and available labels (e.g. gluten free) for given code:  DIETARY code:int\nLeave blank to get dietary information for current data.'
         args = shlex.split(arg)
-        if len(args) > 0:
-            self.code = args[0]
-            self.data = get_data(self.code)
-            self.name = self.data.get('product', {}).get('product_name')
+        self._update_state(arg)
         allergens = get_allergens(self.data)
         print(f'Allergen ingredients for {self.name}: {allergens}')
         labels = self.data.get('product', {}).get('labels')
