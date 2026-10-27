@@ -1,5 +1,6 @@
 import cmd, shlex, requests, json
 import pandas as pd
+from bs4 import BeautifulSoup
 
 def get_data(code):
     try:
@@ -13,18 +14,27 @@ def get_data(code):
         print('Error getting data: check network or URL\n')
         return {}
 
+def get_allergens(data):
+    ingredients_text = str(data.get('product', {}).get('ingredients_text_with_allergens'))
+    # Use Python's built in HTML parser
+    soup = BeautifulSoup(ingredients_text, 'html.parser')
+    allergens = soup.find_all('span')
+    allergens_text = ', '.join([allergen.get_text() for allergen in allergens])
+    allergens_text = allergens_text if allergens_text else 'none'
+    return allergens_text
+
 class FoodREPL(cmd.Cmd):
-    prompt = 'food_repl> '
+    prompt = 'food_app> '
     intro = 'Enter "help" or "?" to list commands.\n'
 
     def __init__(self):
         # Wait for superclass cmd.Cmd initiation
         super().__init__()
-        self.code = '3017624010701' # Default code for development: Nutella
-        with open('output_example.json', 'r', encoding='utf-8') as file:
-            data = json.load(file)
-        self.data = data
-        self.name = 'Nutella'
+        self.code = None # Default code for development: Nutella
+        # with open('output_example.json', 'r', encoding='utf-8') as file:
+        #     data = json.load(file)
+        self.data = {}
+        self.name = 'None'
         self.nutri_stats = {'Energy': {'value': 'energy-kj_100g', 'unit': 'energy-kj_unit'},
                             'Fats': {'value': 'fat_100g', 'unit': 'fat_unit'},
                             'Sat Fats': {'value': 'saturated-fat_100g', 'unit': 'saturated-fat_unit'},
@@ -88,7 +98,9 @@ class FoodREPL(cmd.Cmd):
             self.data = get_data(self.code)
             self.name = self.data.get('product', {}).get('product_name')
         ingredients = self.data.get('product', {}).get('ingredients_text')
-        print(f'{self.name} ingredients: {ingredients}\n')
+        print(f'{self.name} ingredients: {ingredients}')
+        allergens = get_allergens(self.data)
+        print(f'Allergens: {allergens}\n')
 
     def do_nutriinfo(self, arg):
         'Get nutritional information per 100g for given code:  NUTRIINFO code:int\nLeave blank to get nutrition for current data.'
@@ -123,7 +135,16 @@ class FoodREPL(cmd.Cmd):
         print()
 
     def do_dietary(self, arg):
-        'Get allergens and vegan/vegetarian status for given code:  DIETARY code:int\nLeave blank to get dietary information for current data.'
+        'Get allergens and available labels (e.g. gluten free) for given code:  DIETARY code:int\nLeave blank to get dietary information for current data.'
+        args = shlex.split(arg)
+        if len(args) > 0:
+            self.code = args[0]
+            self.data = get_data(self.code)
+            self.name = self.data.get('product', {}).get('product_name')
+        allergens = get_allergens(self.data)
+        print(f'Allergen ingredients for {self.name}: {allergens}')
+        labels = self.data.get('product', {}).get('labels')
+        print(f'Labels: {labels}')
 
 
 if __name__ == '__main__':
