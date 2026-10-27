@@ -70,6 +70,11 @@ class FoodREPL(cmd.Cmd):
                                  'd': 'Limited choice: Low nutritional quality for this type of food.\nConsume less frequently and in smaller portions.',
                                  'e': 'Occasional choice: Very low nutritional quality for this type of food.\nReserve as an occasional treat.'}
 
+    def _update_state(self, arg):
+        args = shlex.split(arg)
+        if len(args) > 0:
+            pass
+        pass
 
     def do_exit(self, arg):
         'Exit the application:  EXIT'
