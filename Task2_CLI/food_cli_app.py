@@ -1,18 +1,37 @@
 import cmd, shlex, requests, json
+import urllib.parse
 import pandas as pd
 from bs4 import BeautifulSoup
 
 def get_data(code):
-    try:
-        data = requests.get(f'https://world.openfoodfacts.net/api/v2/product/{code}').json()
+    code_safe = urllib.parse.quote(code, safe='')
+    response = requests.get(f'https://world.openfoodfacts.net/api/v2/product/{code_safe}')
+    if response.status_code == 200:
+        data = response.json()
         if data['status'] == 1:
             print(f'Successfully retrieved data for product: {data.get('product', {}).get('product_name')}\n')
         else:
-            print(f'Error getting data: {data.get('status_verbose', {})}\n')
+            print(f'Error getting data: {data.get('status_verbose', 'unkown')}\n')
         return data
-    except:
-        print('Error getting data: check network or URL\n')
+    else:
+        print(f'Error {response.status_code}: {response.text}')
         return {}
+
+def get_product_search(search_terms):
+    url = "https://search.openfoodfacts.org/search"
+    headers = {'User-Agent': 'School Food Research App - V1.0 - clarkb@pedarecc.sa.edu.au'}
+    params = {'q': search_terms,
+              'fields': 'product_name,code',
+              'size': 10}
+    response = requests.get(url, params=params, headers=headers)
+    if response.status_code == 200:
+        data = response.json()
+        products = [hit for hit in data.get('hits', {})]
+        return products
+    else:
+        print(response.url)
+        print(f'Error {response.status_code}: {response.text}')
+    return []
 
 def get_allergens(data):
     ingredients_text = str(data.get('product', {}).get('ingredients_text_with_allergens'))
@@ -30,9 +49,12 @@ class FoodREPL(cmd.Cmd):
     def __init__(self):
         # Wait for superclass cmd.Cmd initiation
         super().__init__()
-        self.code = None # Default code for development: Nutella
+        # self.code = 3017620422003
         # with open('output_example.json', 'r', encoding='utf-8') as file:
         #     data = json.load(file)
+        # self.data = data
+        # self.name = 'Nutella
+        self.code = None
         self.data = {}
         self.name = 'None'
         self.nutri_stats = {'Energy': {'value': 'energy-kj_100g', 'unit': 'energy-kj_unit'},
@@ -118,7 +140,7 @@ class FoodREPL(cmd.Cmd):
             nutri_info['Value'].append(nutri_data.get(nutri_stats[stat]['value']))
             nutri_info['Unit'].append(nutri_data.get(nutri_stats[stat]['unit']))
         nutri_dataframe = pd.DataFrame(nutri_info)
-        print(f'Nutrional information for product: {self.name}')
+        print(f'Nutrional information for product (100g): {self.name}')
         print(nutri_dataframe.to_string(index=False))
         print()
 
@@ -144,7 +166,18 @@ class FoodREPL(cmd.Cmd):
         allergens = get_allergens(self.data)
         print(f'Allergen ingredients for {self.name}: {allergens}')
         labels = self.data.get('product', {}).get('labels')
-        print(f'Labels: {labels}')
+        print(f'Labels: {labels}\n')
+
+    def do_search(self, arg):
+        'Get products and codes for given search term:  SEARCH term:string'
+        if arg:
+            products = get_product_search(arg)
+            print(f'{len(products)} results for {arg}')
+            for product in products:
+                print(f'{product.get('product_name')}: {product.get('code')}')
+            print()
+        else:
+            print('Please provide a search term to search for products.\n')
 
 
 if __name__ == '__main__':
