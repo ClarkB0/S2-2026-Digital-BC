@@ -70,6 +70,8 @@ class FoodREPL(cmd.Cmd):
                                  'c': 'Moderate choice: Balanced nutritional quality for this type of food.\nConsume in moderation as part of a varied diet.',
                                  'd': 'Limited choice: Low nutritional quality for this type of food.\nConsume less frequently and in smaller portions.',
                                  'e': 'Occasional choice: Very low nutritional quality for this type of food.\nReserve as an occasional treat.'}
+        self.search = 'None'
+        self.search_results = pd.DataFrame()
 
     def _update_state(self, arg):
         args = shlex.split(arg)
@@ -164,7 +166,7 @@ class FoodREPL(cmd.Cmd):
         print(f'Labels: {labels}\n')
 
     def do_search(self, arg):
-        'Get products and codes for given search terms:  SEARCH terms:string'
+        'Get products and codes for given search terms:  SEARCH terms:string\nLeave blank to get previous search results.'
         if arg:
             results_data = get_product_search(arg)
             results = {'Name': [],
@@ -176,10 +178,14 @@ class FoodREPL(cmd.Cmd):
                 results['Categories'].append(result.get('categories'))
             results_dataframe = pd.DataFrame(results)
             print(f'Search results for {arg}')
-            print(results_dataframe)
+            print(results_dataframe.to_string(index=False))
             print()
+            self.search = arg
+            self.search_results = results_dataframe
         else:
-            print('Please provide a search term to search for products.\n') # save search results and return here
+            print(f'Previous search results for {self.search}')
+            print(self.search_results.to_string(index=False))
+            print()
 
 
 if __name__ == '__main__':
