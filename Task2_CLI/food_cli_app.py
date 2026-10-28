@@ -21,13 +21,14 @@ def get_product_search(search_terms):
     url = "https://search.openfoodfacts.org/search"
     headers = {'User-Agent': 'School Food Research App - V1.0 - clarkb@pedarecc.sa.edu.au'}
     params = {'q': search_terms,
-              'fields': 'product_name,code',
+              'fields': 'product_name,code,categories,ingredients_text',
               'size': 10}
     response = requests.get(url, params=params, headers=headers)
     if response.status_code == 200:
+        print(response.url)
         data = response.json()
-        products = [hit for hit in data.get('hits', {})]
-        return products
+        hits = data.get('hits', [])
+        return hits
     else:
         print(response.url)
         print(f'Error {response.status_code}: {response.text}')
@@ -115,15 +116,14 @@ class FoodREPL(cmd.Cmd):
         self._update_state(arg)
         print(f'Product name: {self.name}\n')
 
-    def do_category(self, arg):
-        'Get the category for given code:  CATEGORY code:int\nLeave blank to get category for current data.'
+    def do_categories(self, arg):
+        'Get categories for given code:  CATEGORIES code:int\nLeave blank to get categories for current data.'
         self._update_state(arg)
-        category = self.data.get('product', {}).get('categories')
-        print(f'{self.name} category: {category}\n')
+        categories = self.data.get('product', {}).get('categories')
+        print(f'{self.name} categories: {categories}\n')
 
     def do_ingredients(self, arg):
         'Get ingredients for given code:  INGREDIENTS code:int\nLeave blank to get ingredients for current data.'
-        args = shlex.split(arg)
         self._update_state(arg)
         ingredients = self.data.get('product', {}).get('ingredients_text')
         print(f'{self.name} ingredients: {ingredients}')
@@ -148,7 +148,7 @@ class FoodREPL(cmd.Cmd):
         print()
 
     def do_nutriscore(self, arg):
-        'Get Nutri-Score for given code:  NUTRISCORE code:int\nLeave blank to get Nutri-Score for current data.\nThe Nutri-Score compares the nutrional value of products in the same category.'
+        'Get Nutri-Score for given code:  NUTRISCORE code:int\nLeave blank to get Nutri-Score for current data.\nThe Nutri-Score compares the nutrional value of products in the same categories.'
         self._update_state(arg)
         nutri_score = self.data.get('product', {}).get('nutriscore_grade')
         print(f'{self.name} Nutri-Score: {str(nutri_score).upper()}')
@@ -157,7 +157,6 @@ class FoodREPL(cmd.Cmd):
 
     def do_dietary(self, arg):
         'Get allergens and available labels (e.g. gluten free) for given code:  DIETARY code:int\nLeave blank to get dietary information for current data.'
-        args = shlex.split(arg)
         self._update_state(arg)
         allergens = get_allergens(self.data)
         print(f'Allergen ingredients for {self.name}: {allergens}')
@@ -165,15 +164,22 @@ class FoodREPL(cmd.Cmd):
         print(f'Labels: {labels}\n')
 
     def do_search(self, arg):
-        'Get products and codes for given search term:  SEARCH term:string'
+        'Get products and codes for given search terms:  SEARCH terms:string'
         if arg:
-            products = get_product_search(arg)
-            print(f'{len(products)} results for {arg}')
-            for product in products:
-                print(f'{product.get('product_name')}: {product.get('code')}')
+            results_data = get_product_search(arg)
+            results = {'Name': [],
+                        'Code': [],
+                        'Categories': []}
+            for result in results_data:
+                results['Name'].append(result.get('product_name'))
+                results['Code'].append(result.get('code'))
+                results['Categories'].append(result.get('categories'))
+            results_dataframe = pd.DataFrame(results)
+            print(f'Search results for {arg}')
+            print(results_dataframe)
             print()
         else:
-            print('Please provide a search term to search for products.\n')
+            print('Please provide a search term to search for products.\n') # save search results and return here
 
 
 if __name__ == '__main__':
