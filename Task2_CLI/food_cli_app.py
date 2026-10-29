@@ -183,13 +183,13 @@ class FoodREPL(cmd.Cmd):
             results_dataframe = pd.DataFrame(results)
             print(f'Search results for {arg}')
             # Printing dataframes automatically truncates values (such as categories)
-            print(results_dataframe.to_string(index=False))
+            print(results_dataframe)
             print()
             self.search = arg
             self.search_results = results_dataframe
         else:
             print(f'Previous search results for {self.search}')
-            print(self.search_results.to_string(index=False))
+            print(self.search_results)
             print()
 
 
