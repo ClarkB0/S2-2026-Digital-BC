@@ -4,9 +4,10 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 def get_data(code):
+    headers = {'User-Agent': 'School Food Research App - V1.0 - clarkb@pedarecc.sa.edu.au'}
     # Escapes every special character
     code_safe = urllib.parse.quote(code, safe='')
-    response = requests.get(f'https://world.openfoodfacts.net/api/v2/product/{code_safe}')
+    response = requests.get(f'https://world.openfoodfacts.org/api/v2/product/{code_safe}', headers=headers)
     if response.status_code == 200:
         data = response.json()
         if data['status'] == 1:
@@ -15,6 +16,7 @@ def get_data(code):
             print(f'Error getting data: {data.get('status_verbose', 'unkown')}\n')
         return data
     else:
+        print(response.url)
         print(f'Error {response.status_code}: {response.text}')
         return {}
 
