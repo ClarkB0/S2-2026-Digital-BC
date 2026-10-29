@@ -4,6 +4,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 def get_data(code):
+    # Escapes every special character
     code_safe = urllib.parse.quote(code, safe='')
     response = requests.get(f'https://world.openfoodfacts.net/api/v2/product/{code_safe}')
     if response.status_code == 200:
@@ -19,6 +20,8 @@ def get_data(code):
 
 def get_product_search(search_terms):
     url = "https://search.openfoodfacts.org/search"
+    # Headers identify the script to the server
+    # Prevents getting blocked by servers that reject the default Python identifier
     headers = {'User-Agent': 'School Food Research App - V1.0 - clarkb@pedarecc.sa.edu.au'}
     params = {'q': search_terms,
               'fields': 'product_name,code,categories,ingredients_text',
@@ -38,6 +41,7 @@ def get_allergens(data):
     ingredients_text = str(data.get('product', {}).get('ingredients_text_with_allergens'))
     # Use Python's built in HTML parser
     soup = BeautifulSoup(ingredients_text, 'html.parser')
+    # Text allergens are typically highlighted with <span>
     allergens = soup.find_all('span')
     allergens_text = ', '.join([allergen.get_text() for allergen in allergens])
     allergens_text = allergens_text if allergens_text else 'none'
@@ -64,7 +68,7 @@ class FoodREPL(cmd.Cmd):
                             'Sodium': {'value': 'sodium_100g', 'unit': 'sodium_unit'},
                             'Carbs': {'value': 'carbohydrates_100g', 'unit': 'carbohydrates_unit'},
                             'Sugars': {'value': 'sugars_100g', 'unit': 'sugars_unit'},
-                            'Proteins': {'value': 'proteins_100g', 'unit': 'proteins_unit'}} # Does not work for prepared foods (e.g. Milo)
+                            'Proteins': {'value': 'proteins_100g', 'unit': 'proteins_unit'}}
         self.nutri_score_desc = {'a': 'Excellent choice: Very high nutritional quality for this type of food.\nIdeal for daily consumption.',
                                  'b': 'Good choice: Good overall nutritional quality for this type of food.\nHealthy option that can be eaten regularly.',
                                  'c': 'Moderate choice: Balanced nutritional quality for this type of food.\nConsume in moderation as part of a varied diet.',
@@ -176,7 +180,8 @@ class FoodREPL(cmd.Cmd):
                 results['Categories'].append(result.get('categories'))
             results_dataframe = pd.DataFrame(results)
             print(f'Search results for {arg}')
-            print(results_dataframe)
+            # Printing dataframes automatically truncates values (such as categories)
+            print(results_dataframe.to_string(index=False))
             print()
         else:
             print('Please provide a search term to search for products.\n') # save search results and return here
